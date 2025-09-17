@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Lerne wann du willst',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Lernmaterial auf all deinen Geräten verfügbar.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Lerne wie du willst',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Du kannst vorlernen, nachlernen und beliebig Themen wechseln. Es gibt aber auch einen empfohlenen Pfad.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Wiederholungsfragen im Aufbau',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Zu jedem Thema interaktive Wiederholungstests.
       </>
     ),
   },
