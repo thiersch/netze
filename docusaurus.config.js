@@ -53,6 +53,7 @@ const config = {
           editUrl:
             'https://github.com/thiersch/netze/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
