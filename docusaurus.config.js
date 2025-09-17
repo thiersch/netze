@@ -99,7 +99,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Netze. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} thiersch.`,
       },
       prism: {
         theme: prismThemes.github,
