@@ -32,7 +32,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({iimage, title, description}) {
+function Feature({image, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
