@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Lerne wann du willst',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/baer1.png').default,
     description: (
       <>
         Lernmaterial auf all deinen Geräten verfügbar.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Lerne wie du willst',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/baer2.png').default,
     description: (
       <>
         Du kannst vorlernen, nachlernen und beliebig Themen wechseln. Es gibt aber auch einen empfohlenen Pfad.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Wiederholungsfragen im Aufbau',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/baer3.png').default,
     description: (
       <>
         Zu jedem Thema interaktive Wiederholungstests.
