@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Lerne wann du willst',
-    image: require('@site/static/img/baer1.jpg').default,
+    img: require('@site/static/img/baer1.jpg').default,
     description: (
       <>
         Lernmaterial auf all deinen Geräten verfügbar.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Lerne wie du willst',
-    image: require('@site/static/img/baer2.jpg').default,
+    img: require('@site/static/img/baer2.jpg').default,
     description: (
       <>
         Du kannst vorlernen, nachlernen und beliebig Themen wechseln. Es gibt aber auch einen empfohlenen Pfad.
