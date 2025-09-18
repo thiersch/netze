@@ -1,10 +1,7 @@
----
-sidebar_position: 1
----
 
-# Tutorial Intro
+# Willkommen
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Schau orientiere dich kurz auf dieser Seite.
 
 ## Getting Started
 
