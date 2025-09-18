@@ -32,11 +32,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({image, title, description}) {
+function Feature({img, title, description}) { // 'img' wird jetzt empfangen
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img className={styles.featureImage} role="img" />
+        <img className={styles.featureImage} src={img} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
