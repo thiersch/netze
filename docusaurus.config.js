@@ -73,12 +73,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
+          // Hier habe ich den "Tutorial"-Link entfernt
           {
             href: 'https://github.com/thiersch/netze',
             label: 'GitHub',
@@ -89,14 +84,10 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          // Auch hier wurde der "Tutorial"-Link entfernt
           {
             title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
+            items: [], // Das "items"-Array ist nun leer
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} thiersch.`,
