@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Wiederholungsfragen im Aufbau',
-    image: require('@site/static/img/baer3.jpg').default,
+    img: require('@site/static/img/baer3.jpg').default,
     description: (
       <>
         Zu jedem Thema interaktive Wiederholungstests.
@@ -36,7 +36,7 @@ function Feature({image, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <image className={styles.featureImage} role="img" />
+        <img className={styles.featureImage} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
