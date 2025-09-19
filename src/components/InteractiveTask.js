@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import clsx from 'clsx';
 import styles from './InteractiveTask.module.css';
 
 const TASK_SCORE_COOKIE = 'docusaurus_task_total_score';
@@ -57,13 +58,13 @@ const InteractiveTask = ({ taskData }) => {
                 <button
                   key={type}
                   onClick={() => handleClassification(item, type)}
-                  className={`${styles.classificationButton} ${
+                  className={clsx(
+                    'button',
                     userAnswers[item] && userAnswers[item].classification === type
-                      ? userAnswers[item].isCorrect
-                        ? styles.correct
-                        : styles.wrong
-                      : ''
-                  }`}
+                      ? 'button--primary'
+                      : 'button--outline',
+                    styles.answerButton
+                  )}
                   disabled={taskCompleted}
                 >
                   {type}
@@ -75,9 +76,9 @@ const InteractiveTask = ({ taskData }) => {
       </div>
       {taskCompleted && (
         <div className={styles.results}>
-          <p>Du hast **{currentTaskScore} von {taskData.items.length}** Aufgaben dieser Sektion richtig gelöst.</p>
+          <p>Du hast <strong>{currentTaskScore} von {taskData.items.length}</strong> Aufgaben dieser Sektion richtig gelöst.</p>
           <hr />
-          <p>Deine bisherige Gesamtpunktzahl aus allen **{taskCount}** Aufgaben: **{totalScore}** Punkte.</p>
+          <p>Deine bisherige Gesamtpunktzahl aus allen <strong>{taskCount}</strong> Aufgaben: <strong>{totalScore}</strong> Punkte.</p>
         </div>
       )}
     </div>
