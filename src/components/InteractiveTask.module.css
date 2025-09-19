@@ -2,16 +2,21 @@
   margin-top: 1rem;
 }
 
-.itemBlock {
+.itemsToClassify {
+  margin-top: 1rem;
+}
+
+.itemWrapper {
   margin-bottom: 1.5rem;
 }
 
 .itemText {
+  display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-.buttonGroup {
+.classificationButtons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -19,9 +24,18 @@
 
 .answerButton {
   border-radius: 0.75rem; /* modernere Form */
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .answerButton:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.results {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
 }
