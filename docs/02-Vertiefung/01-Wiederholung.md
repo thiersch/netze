@@ -8,27 +8,68 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="l2" label="Layer 2" default>
-
-| Protokolle | | |
-|------------|---|---|
-| Ethernet   | WLAN | Bluetooth |
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">Protokolle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ethernet</td>
+          <td>WLAN</td>
+          <td>Bluetooth</td>
+        </tr>
+      </tbody>
+    </table>
   </TabItem>
   <TabItem value="l3" label="Layer 3">
-
-| Protokolle | | |
-|------------|---|---|
-| IPv4       | IPv6 | OSPF |
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">Protokolle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IPv4</td>
+          <td>IPv6</td>
+          <td>OSPF</td>
+        </tr>
+      </tbody>
+    </table>
   </TabItem>
   <TabItem value="L4" label="Layer 4">
-
-| Protokolle | | |
-|------------|---|---|
-| TCP        | UDP | SCTP |
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">Protokolle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TCP</td>
+          <td>UDP</td>
+          <td>SCTP</td>
+        </tr>
+      </tbody>
+    </table>
   </TabItem>
   <TabItem value="L5" label="Layer 5">
-
-| Protokolle | | | |
-|------------|---|---|---|
-| HTTP | FTP | SMTP | IMAP |
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">Protokolle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTTP</td>
+          <td>FTP</td>
+          <td>SMTP</td>
+          <td>IMAP</td>
+        </tr>
+      </tbody>
+    </table>
   </TabItem>
 </Tabs>
