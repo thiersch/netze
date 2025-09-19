@@ -23,3 +23,4 @@ Welche Geräte vermitteln Nachrichten in fremde Netze?
 Mit welchen Adressen arbeiten Switche?
 Mit welchen Adressen arbeiten Access-Points?
 Mit welchen Adressen arbeiten Router vorallem?
+Welches Protokoll liefert Verfahren zur Kommunikation in andere Netze?
