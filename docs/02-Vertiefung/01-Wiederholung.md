@@ -8,21 +8,25 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="l2" label="Layer 2" default>
-    | -------- | ------- | ------- |
-    | Ethernet | WLAN    | Bluetooth |
+
+| -------- | ------- | ------- |
+| Ethernet | WLAN    | Bluetooth |
   </TabItem>
   <TabItem value="l3" label="Layer 3">
-    | -------- | ------- | ------- |
-    | IPv4     | IPv6    | OSPF    |
-    This is an orange 🍊
+
+| -------- | ------- | ------- |
+| IPv4     | IPv6    | OSPF    |
+This is an orange 🍊
   </TabItem>
   <TabItem value="L4" label="Layer 4">
-    | -------- | ------- | ------- |
-    | TCP | UDP |    SCTP |
+
+| -------- | ------- | ------- |
+| TCP | UDP |   SCTP |
   </TabItem>
   <TabItem value="L5" label="Layer 5">
-    | -------- | ------- | ------- | ------- |
-    | HTTP | FTP  |   SMTP | IMAP |
+
+| -------- | ------- | ------- | ------- |
+| HTTP | FTP  |   SMTP | IMAP |
   </TabItem>
 </Tabs>
 
