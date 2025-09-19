@@ -10,9 +10,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="l2" label="Layer 2" default>
     <table>
       <thead>
-        <tr>
-          <th colspan="3">Protokolle</th>
-        </tr>
       </thead>
       <tbody>
         <tr>
@@ -26,9 +23,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="l3" label="Layer 3">
     <table>
       <thead>
-        <tr>
-          <th colspan="3">Protokolle</th>
-        </tr>
       </thead>
       <tbody>
         <tr>
@@ -42,9 +36,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="L4" label="Layer 4">
     <table>
       <thead>
-        <tr>
-          <th colspan="3">Protokolle</th>
-        </tr>
       </thead>
       <tbody>
         <tr>
@@ -58,9 +49,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="L5" label="Layer 5">
     <table>
       <thead>
-        <tr>
-          <th colspan="4">Protokolle</th>
-        </tr>
       </thead>
       <tbody>
         <tr>
