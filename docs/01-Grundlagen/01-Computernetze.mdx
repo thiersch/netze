@@ -6,15 +6,16 @@ title: Computernetze
 
 Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Systeme**, die so gekoppelt sind, dass sie miteinander kommunizieren können. Solche elektronischen Systeme sind in der Regel Computer, Sensoren und Aktoren. 
 
-**Computer** sind Geräte, die anhand von Rechenvorschriften (Algoritmen) Daten verarbeiten. 
-**Sensoren** (Fühler, Aufnehmer) sind technische Bauteile, die einen Messwert erfassen und in ein elektrisches Signal umformen, das weiterverarbeitet werden kann. **Aktoren** sind die Gegenstücke zu Sensoren, sie setzen verarbeitbare Signale in Effekte um.
+**Computer** sind Geräte, die anhand von Rechenvorschriften (Algoritmen) Daten verarbeiten.  
+**Sensoren** (Fühler, Aufnehmer) sind technische Bauteile, die einen Messwert erfassen und in ein elektrisches Signal umformen, das weiterverarbeitet werden kann.  
+**Aktoren** sind die Gegenstücke zu Sensoren, sie setzen verarbeitbare Signale in Effekte um.
 
 ---
 
 import InteractiveTask from '@site/src/components/InteractiveTask';
 
-const myTaskData = {
-description: 'Ordne den benannten Komponenten die Eigenschaften Sensor, Aktor oder Computer zu.',
+<InteractiveTask taskData={{
+  description: 'Ordne den benannten Komponenten die Eigenschaften Sensor, Aktor oder Computer zu.',
   items: [
     'Ein Temperaturfühler sendet elektrische Signale an einen Chip.',
     'Ein Chip verarbeitet Signale und sendet neue Signale.',
@@ -25,6 +26,4 @@ description: 'Ordne den benannten Komponenten die Eigenschaften Sensor, Aktor od
     'Ein Chip verarbeitet Signale und sendet neue Signale.': 'Computer',
     'Ein Lüfter setzt elektrische Signale in Bewegung um.': 'Aktor',
   },
-};
-
-<InteractiveTask taskData={myTaskData} />
+}} />
