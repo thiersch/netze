@@ -16,7 +16,6 @@ import TabItem from '@theme/TabItem';
 
 | -------- | ------- | ------- |
 | IPv4     | IPv6    | OSPF    |
-This is an orange 🍊
   </TabItem>
   <TabItem value="L4" label="Layer 4">
 
