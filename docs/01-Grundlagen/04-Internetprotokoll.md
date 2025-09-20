@@ -6,9 +6,15 @@ Das Internet ist ein **Zusammenschluss von Netzen**, die über den ganzen Planet
 Das Internetprotokoll **strukturiert** den Netzverbund und liefert Verfahren für die **Kommunikation in andere Netze**.
 :::
 
+### Kommunikation innerhalb von Netzen
+
 Teilnehmer eines einzelnen Netzes tauschen regelmäßig ihre jeweiligen Adressen aus und können über diese direkt miteinander Kommunizieren. Diese Adressen heißen "physische Adressen" oder **MAC-Adressen**. Nachrichten an physische Adressen werden aber nicht aus Netzen herausgeleitet, mit ihnen können also keine Teilnehmer in anderen Netzen angesprochen werden. Aktive Netzwerkkomponenten, die Nachrichten zwischen Teilnehmern des selben Netzes vermitteln, heißen **Switch** oder **Access Point**. Switche und Access-Points arbeiten nur mit MAC-Adressen.
 
-Damit eine Nachricht an einen Computer in einem fremden Netz geleitet werden kann, ist eine Information darüber nötig, in welchem **Zielnetz** sich dieser Computer befindet. Diese Information heißt **Netzadresse** und sie steckt in jeder IP-Adresse. Die Wegfindung von Nachrichten über möglicherweise sehr viele Netze hinweg heißt **Routing**. Aktive Netzwerkkomponenten, die Nachrichten zwischen Teilnehmern verschiedener Netze vermitteln, heißen **Router**. Hierzu müssen Router mit IP-Adressen arbeiten können. 
+### Netzübergreifende Kommunikation
+
+Damit eine Nachricht an einen Computer in einem fremden Netz geleitet werden kann, ist eine Information darüber nötig, in welchem **Zielnetz** sich dieser Computer befindet. Diese Information heißt **Netzadresse** und sie steckt in jeder IP-Adresse. Die Wegfindung von Nachrichten über möglicherweise sehr viele Netze hinweg heißt **Routing**. Aktive Netzwerkkomponenten, die Nachrichten zwischen Teilnehmern verschiedener Netze vermitteln, heißen **Router**. Hierzu müssen Router mit IP-Adressen arbeiten können.
+
+Wie ein Intercity Städte verbindet, verbindet das Internet Netze. Alles was nötig ist um zwischen Netzen (inter net) zu kommunizieren, liefert das Internetprotokoll.
 
 ### Teste dein Wissen!
 
@@ -63,7 +69,7 @@ Damit eine Nachricht an einen Computer in einem fremden Netz geleitet werden kan
       ],
     },
     {
-      question: "Welche Geräte vermitteln Nachrichten in fremde Netze?",
+      question: "Welche Geräte vermitteln Nachrichten in andere Netze?",
       answers: [
         { text: "Switche", isCorrect: false },
         { text: "Router", isCorrect: true },
