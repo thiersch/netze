@@ -1,0 +1,99 @@
+.quizContainer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.75rem;
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Neuer Container für die Statusleiste */
+.progressContainer {
+  height: 8px;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+/* Neue Statusleiste */
+.progressBar {
+  height: 100%;
+  background-color: var(--ifm-color-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.answersContainer {
+  /* NEU: Umstellung auf Grid */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Basis: Buttons (wie bei InteractiveTask) */
+.answerButton {
+  /* Anpassungen, um Buttons im Grid-Layout zu zentrieren */
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  text-align: left;
+}
+
+/* Hover-Effekt */
+.answerButton:hover:not(:disabled) {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-font-color-base);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Richtig */
+.correct {
+  background-color: var(--ifm-color-success) !important;
+  color: var(--ifm-color-success-contrast-foreground) !important;
+  border: none !important;
+}
+
+/* Falsch */
+.wrong {
+  background-color: var(--ifm-color-danger) !important;
+  color: var(--ifm-color-danger-contrast-foreground) !important;
+  border: none !important;
+}
+
+/* Neue Klassen für die Ergebnisübersicht */
+.summaryList {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.summaryList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-300);
+}
+
+.summaryList li:last-child {
+  border-bottom: none;
+}
+
+.summaryCorrect {
+  color: var(--ifm-color-success);
+}
+
+.summaryWrong {
+  color: var(--ifm-color-danger);
+}
+
+/* OPTIONAL: Media Query für kleine Bildschirme */
+@media (max-width: 768px) {
+  .answersContainer {
+    grid-template-columns: 1fr; /* Wechselt zu einer Spalte */
+  }
+}
