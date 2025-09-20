@@ -50,8 +50,6 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/thiersch/netze/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -73,10 +71,9 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          // Hier habe ich den "Tutorial"-Link entfernt
           {
-            href: 'https://github.com/thiersch/netze',
-            label: 'GitHub',
+            href: 'https://www.csfieldguide.org.nz/en/interactives/binary-cards/',
+            label: 'Binary Cards',
             position: 'right',
           },
         ],
@@ -90,7 +87,7 @@ const config = {
             items: [], // Das "items"-Array ist nun leer
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} thiersch.`,
+        copyright: `Copyright © ${new Date().getFullYear()} thiersch`,
       },
       prism: {
         theme: prismThemes.github,
