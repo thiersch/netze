@@ -6,24 +6,40 @@ title: Computernetze
 
 Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Systeme**, die so gekoppelt sind, dass sie miteinander kommunizieren können. Solche elektronischen Systeme sind in der Regel Computer, Sensoren und Aktoren. 
 
-**Computer** sind Geräte, die anhand von Rechenvorschriften (Algoritmen) Daten verarbeiten.  
-**Sensoren** (Fühler, Aufnehmer) sind technische Bauteile, die einen Messwert erfassen und in ein elektrisches Signal umformen, das weiterverarbeitet werden kann.  
-**Aktoren** sind die Gegenstücke zu Sensoren, sie setzen verarbeitbare Signale in Effekte um.
+<Columns> 
+  <Column className='text--left'>
+    #### Computer
+    Geräte, die anhand von Rechenvorschriften (Algoritmen) Daten verarbeiten.
+
+
+    Merkhilfe: englisch _to compute_, rechnen.
+  </Column>
+  <Column className='text--left'>
+    #### Sensoren
+    Technische Bauteile, die einen Messwert aus der Welt erfassen und in ein Signal umformen, das weiterverarbeitet werden kann. 
+
+    Merkhilfe: englisch _to sense_, fühlen.
+  </Column>
+  <Column className='text--left'>
+    #### Aktoren
+    Technische Bauteile und Gegenstücke zu Sensoren, sie setzen verarbeitbare Signale in Effekte in der Welt um.
+
+
+    Merkhilfe: englisch _to act_, handeln.
+  </Column>
+</Columns>
 
 ---
 
-import InteractiveTask from '@site/src/components/InteractiveTask';
+<details>
+  <summary>Bereit für eine Aufgabe?</summary>
 
-<InteractiveTask taskData={{
-  description: 'Ordne den benannten Komponenten die Eigenschaften Sensor, Aktor oder Computer zu.',
-  items: [
-    'Ein Temperaturfühler sendet elektrische Signale an einen Chip.',
-    'Ein Chip verarbeitet Signale und sendet neue Signale.',
-    'Ein Lüfter setzt elektrische Signale in Bewegung um.',
-  ],
-  answers: {
-    'Ein Temperaturfühler sendet elektrische Signale an einen Chip.': 'Sensor',
-    'Ein Chip verarbeitet Signale und sendet neue Signale.': 'Computer',
-    'Ein Lüfter setzt elektrische Signale in Bewegung um.': 'Aktor',
-  },
-}} />
+**Aufgabe**: Ordne die Eigenschaften **Computer**, **Sensor** oder **Aktor** zu.
+
+<ItemMatch taskData={[
+  { id: 'temp_sensor', text: 'Ein Temperaturfühler sendet elektrische Signale an einen Chip.', answer: 'Sensor' },
+  { id: 'chip', text: 'Ein Chip verarbeitet Signale und sendet neue Signale.', answer: 'Computer' },
+  { id: 'fan', text: 'Ein Lüfter setzt elektrische Signale in Bewegung um.', answer: 'Aktor' },
+]} />
+
+</details>

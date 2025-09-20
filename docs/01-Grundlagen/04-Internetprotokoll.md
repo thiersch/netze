@@ -15,8 +15,6 @@ Damit eine Nachricht an einen Computer in einem fremden Netz geleitet werden kan
 <details>
   <summary>Bereit für das Quiz?</summary>
 
-import Quiz from '@site/src/components/Quiz';
-
 <Quiz
   questions={[
     {

@@ -1,11 +1,13 @@
+// src/components/ItemMatch/index.js
+
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import styles from './InteractiveTask.module.css';
+import styles from './ItemMatch.module.css';
 
 const TASK_SCORE_COOKIE = 'docusaurus_task_total_score';
 const TASK_COUNT_COOKIE = 'docusaurus_task_count';
 
-const InteractiveTask = ({ taskData }) => {
+const ItemMatch = ({ taskData }) => {
   const [userAnswers, setUserAnswers] = useState({});
   const [taskCompleted, setTaskCompleted] = useState(false);
   const [currentTaskScore, setCurrentTaskScore] = useState(0);
@@ -21,19 +23,18 @@ const InteractiveTask = ({ taskData }) => {
   }, []);
 
   const handleClassification = (item, classification) => {
-    const isCorrect = taskData.answers[item] === classification;
-    const newAnswers = { ...userAnswers, [item]: { classification, isCorrect } };
+    const isCorrect = item.answer === classification;
+    const newAnswers = { ...userAnswers, [item.id]: { classification, isCorrect } };
     setUserAnswers(newAnswers);
 
-    const allItemsClassified = Object.keys(taskData.answers).every(
-      (key) => newAnswers[key] !== undefined
+    const allItemsClassified = taskData.every(
+      (dataItem) => newAnswers[dataItem.id] !== undefined
     );
 
     if (allItemsClassified) {
       const newScore = Object.values(newAnswers).filter(ans => ans.isCorrect).length;
       setCurrentTaskScore(newScore);
 
-      // Speichere die neuen kumulierten Werte
       const newTotalScore = totalScore + newScore;
       const newQuizCount = taskCount + 1;
       Cookies.set(TASK_SCORE_COOKIE, newTotalScore.toString(), { expires: 365 });
@@ -47,23 +48,20 @@ const InteractiveTask = ({ taskData }) => {
 
   return (
     <div className={styles.taskContainer}>
-      <h4>Aufgabe: {taskData.description}</h4>
       <div className={styles.itemsToClassify}>
-        {taskData.items.map((item, index) => (
-          <div key={index} className={styles.itemWrapper}>
-            <span className={styles.itemText}>{item}</span>
+        {taskData.map((item) => (
+          <div key={item.id} className={styles.itemWrapper}>
+            <span className={styles.itemText}>{item.text}</span>
             <div className={styles.classificationButtons}>
               {['Sensor', 'Aktor', 'Computer'].map((type) => {
-                const selected =
-                  userAnswers[item] && userAnswers[item].classification === type;
+                const selected = userAnswers[item.id] && userAnswers[item.id].classification === type;
                 const evaluated =
                   taskCompleted && selected
-                    ? userAnswers[item].isCorrect
+                    ? userAnswers[item.id].isCorrect
                       ? styles.correct
                       : styles.wrong
                     : '';
-                const chosenButNotEvaluated =
-                  selected && !taskCompleted ? styles.selected : '';
+                const chosenButNotEvaluated = selected && !taskCompleted ? styles.selected : '';
 
                 return (
                   <button
@@ -83,7 +81,7 @@ const InteractiveTask = ({ taskData }) => {
       {taskCompleted && (
         <div className={styles.results}>
           <p>
-            Du hast <strong>{currentTaskScore} von {taskData.items.length}</strong> Aufgaben dieser Sektion richtig gelöst.
+            Du hast <strong>{currentTaskScore} von {taskData.length}</strong> Aufgaben dieser Sektion richtig gelöst.
           </p>
           <hr />
           <p>
@@ -95,4 +93,4 @@ const InteractiveTask = ({ taskData }) => {
   );
 };
 
-export default InteractiveTask;
+export default ItemMatch;
