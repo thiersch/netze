@@ -22,20 +22,48 @@
   gap: 0.5rem;
 }
 
+/* Basis: Outline-Style */
 .answerButton {
-  border-radius: 0.75rem; /* modernere Form */
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 0.75rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease,
+    color 0.15s ease;
 }
 
-.answerButton:hover {
+/* Hover-Effekt für nicht-ausgewählte Buttons */
+.answerButton:not(.button--primary):hover {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary); /* guter Kontrast */
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Für ausgewählte Buttons */
+.answerButton.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse);
+}
+
+/* Ergebnisdarstellung */
 .results {
   margin-top: 1.5rem;
   padding: 1rem;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 0.5rem;
   background-color: var(--ifm-background-surface-color);
+}
+
+/* === Neue Styles für Richtig/Falsch mit Theme-Variablen === */
+
+/* korrekt */
+.correct {
+  background-color: var(--ifm-color-success) !important;
+  color: var(--ifm-color-success-contrast-foreground) !important;
+  border: none !important;
+}
+
+/* falsch */
+.wrong {
+  background-color: var(--ifm-color-danger) !important;
+  color: var(--ifm-color-danger-contrast-foreground) !important;
+  border: none !important;
 }
