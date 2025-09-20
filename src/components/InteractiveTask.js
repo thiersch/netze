@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import clsx from 'clsx';
 import styles from './InteractiveTask.module.css';
 
 const TASK_SCORE_COOKIE = 'docusaurus_task_total_score';
@@ -33,7 +32,7 @@ const InteractiveTask = ({ taskData }) => {
     if (allItemsClassified) {
       const newScore = Object.values(newAnswers).filter(ans => ans.isCorrect).length;
       setCurrentTaskScore(newScore);
-      
+
       // Speichere die neuen kumulierten Werte
       const newTotalScore = totalScore + newScore;
       const newQuizCount = taskCount + 1;
@@ -54,31 +53,42 @@ const InteractiveTask = ({ taskData }) => {
           <div key={index} className={styles.itemWrapper}>
             <span className={styles.itemText}>{item}</span>
             <div className={styles.classificationButtons}>
-              {['Sensor', 'Aktor', 'Computer'].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => handleClassification(item, type)}
-                  className={clsx(
-                    'button',
-                    userAnswers[item] && userAnswers[item].classification === type
-                      ? 'button--primary'
-                      : 'button--outline',
-                    styles.answerButton
-                  )}
-                  disabled={taskCompleted}
-                >
-                  {type}
-                </button>
-              ))}
+              {['Sensor', 'Aktor', 'Computer'].map((type) => {
+                const selected =
+                  userAnswers[item] && userAnswers[item].classification === type;
+                const evaluated =
+                  taskCompleted && selected
+                    ? userAnswers[item].isCorrect
+                      ? styles.correct
+                      : styles.wrong
+                    : '';
+                const chosenButNotEvaluated =
+                  selected && !taskCompleted ? styles.selected : '';
+
+                return (
+                  <button
+                    key={type}
+                    onClick={() => handleClassification(item, type)}
+                    className={`${styles.answerButton} ${evaluated} ${chosenButNotEvaluated}`}
+                    disabled={taskCompleted}
+                  >
+                    {type}
+                  </button>
+                );
+              })}
             </div>
           </div>
         ))}
       </div>
       {taskCompleted && (
         <div className={styles.results}>
-          <p>Du hast <strong>{currentTaskScore} von {taskData.items.length}</strong> Aufgaben dieser Sektion richtig gelöst.</p>
+          <p>
+            Du hast <strong>{currentTaskScore} von {taskData.items.length}</strong> Aufgaben dieser Sektion richtig gelöst.
+          </p>
           <hr />
-          <p>Deine bisherige Gesamtpunktzahl aus allen <strong>{taskCount}</strong> Aufgaben: <strong>{totalScore}</strong> Punkte.</p>
+          <p>
+            Deine bisherige Gesamtpunktzahl aus allen <strong>{taskCount}</strong> Aufgaben: <strong>{totalScore}</strong> Punkte.
+          </p>
         </div>
       )}
     </div>
