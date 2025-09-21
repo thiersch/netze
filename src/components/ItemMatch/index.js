@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import styles from './ItemMatch.module.css';
 
-const TASK_SCORE_COOKIE = 'docusaurus_task_total_score';
-const TASK_COUNT_COOKIE = 'docusaurus_task_count';
+const EXERCISE_SCORE_COOKIE = 'docusaurus_exercise_total_score';
+const EXERCISE_COUNT_COOKIE = 'docusaurus_exercise_count';
 
 const ItemMatch = ({ taskData }) => {
   const [userAnswers, setUserAnswers] = useState({});
@@ -16,8 +16,8 @@ const ItemMatch = ({ taskData }) => {
 
   // Lade die persistenten Daten beim Initialisieren
   useEffect(() => {
-    const savedTotalScore = parseInt(Cookies.get(TASK_SCORE_COOKIE) || '0', 10);
-    const savedTaskCount = parseInt(Cookies.get(TASK_COUNT_COOKIE) || '0', 10);
+    const savedTotalScore = parseInt(Cookies.get(EXERCISE_SCORE_COOKIE) || '0', 10);
+    const savedTaskCount = parseInt(Cookies.get(EXERCISE_COUNT_COOKIE) || '0', 10);
     setTotalScore(savedTotalScore);
     setTaskCount(savedTaskCount);
   }, []);
@@ -37,8 +37,8 @@ const ItemMatch = ({ taskData }) => {
 
       const newTotalScore = totalScore + newScore;
       const newQuizCount = taskCount + 1;
-      Cookies.set(TASK_SCORE_COOKIE, newTotalScore.toString(), { expires: 365 });
-      Cookies.set(TASK_COUNT_COOKIE, newQuizCount.toString(), { expires: 365 });
+      Cookies.set(EXERCISE_SCORE_COOKIE, newTotalScore.toString(), { expires: 365 });
+      Cookies.set(EXERCISE_COUNT_COOKIE, newQuizCount.toString(), { expires: 365 });
 
       setTotalScore(newTotalScore);
       setTaskCount(newQuizCount);

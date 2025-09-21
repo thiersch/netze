@@ -5,6 +5,7 @@
   import Column from '@site/src/components/Column';
   import ItemMatch from '@site/src/components/ItemMatch';
   import Quiz from '@site/src/components/Quiz';
+  import OrderVertical from '@site/src/components/OrderVertical';
   export default {
     // Reusing the default mapping
     ...MDXComponents,
@@ -12,4 +13,5 @@
     Column,
     ItemMatch,
     Quiz,
+    OrderVertical,
   };

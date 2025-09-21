@@ -1,0 +1,59 @@
+.taskContainer {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dropList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.dropItem {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+  cursor: grab;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.dropItem:active {
+  cursor: grabbing;
+  transform: scale(1.02);
+}
+
+.correct {
+  background: var(--ifm-color-success) !important;
+  color: var(--ifm-color-success-contrast-foreground) !important;
+}
+
+.wrong {
+  background: var(--ifm-color-danger) !important;
+  color: var(--ifm-color-danger-contrast-foreground) !important;
+}
+
+.submitButton {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submitButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.results {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}

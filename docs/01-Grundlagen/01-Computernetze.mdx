@@ -97,11 +97,33 @@ Computernetze lassen sich unterschiedlich anordnen. Eine solche Anordnung heißt
 </Columns>
 
 <details>
-  <summary>Aufgabe 1: Topologie-Recherche</summary>
+  <summary>Aufgabe 1: Topologie-Vergleich</summary>
 
-**Aufgabe**: Recherchiere drei Vorteile und drei Nachteile zu den Topologien Bus, Ring, Stern, Masche.
+**Aufgabe**: Vergleiche die Topologien Bus, Ring, Stern, Masche hinsichtlich **Ausfallsicherheit**, **Materialaufwand** und **Arbeitsaufwand**.
+
+<OrderVertical
+  taskData={{
+    description: "Ordne die Netzwerktopologien nach Materialaufwand (oben = billig, unten = teuer).",
+    items: ["Ring", "Masche", "Bus", "Stern"],
+    correctOrder: ["Bus", "Stern", "Ring", "Masche"],
+  }}
+/>
+
+<OrderVertical
+  taskData={{
+    description: "Ordne die Netzwerktopologien nach Ausfallsicherheit (oben = ausfallsicher, unten = ausfallanfällig).",
+    items: ["Ring", "Masche", "Bus", "Stern"],
+    correctOrder: ["Masche", "Stern", "Ring", "Bus"],
+  }}
+/>
+
+
 
 </details>
+
+
+
+
 
 <details>
   <summary>Aufgabe 2: Topologie-Quiz</summary>
@@ -183,7 +205,7 @@ Computernetze lassen sich unterschiedlich anordnen. Eine solche Anordnung heißt
       ],
     },
     {
-      question: "Was ist ein Vorteil der Ring-Topologie?",
+      question: "Was ist ein (veralteter) Vorteil der Ring-Topologie?",
       answers: [
         { text: "Ein Ausfall eines Teilnehmers legt das Netz lahm", isCorrect: false },
         { text: "Es gibt keinen zentralen Knotenpunkt, was Kosten spart", isCorrect: true },
@@ -198,6 +220,108 @@ Computernetze lassen sich unterschiedlich anordnen. Eine solche Anordnung heißt
         { text: "Stern-Topologie", isCorrect: false },
         { text: "Ring-Topologie", isCorrect: false },
         { text: "Maschen-Topologie", isCorrect: true }
+      ],
+    },
+  ]}
+/>
+
+</details>
+
+## Teste dein Wissen!
+
+<details>
+  <summary>Bereit für das Quiz?</summary>
+
+<Quiz
+  questions={[
+    {
+      question: "Was ist die Hauptaufgabe eines Aktors?",
+      answers: [
+        { text: "Daten verarbeiten und Rechenvorschriften ausführen.", isCorrect: false },
+        { text: "Einen Messwert aus der Umwelt erfassen und in ein Signal umwandeln.", isCorrect: false },
+        { text: "Signale verarbeiten und diese in Effekte in der realen Welt umsetzen.", isCorrect: true },
+        { text: "Das physische Medium für die Datenübertragung bereitstellen.", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Netzkomponenten verstärken Signale und erhöhen dadurch die Reichweite der Übertragungsstrecke?",
+      answers: [
+        { text: "Passive Komponenten", isCorrect: false },
+        { text: "Teilnehmer", isCorrect: false },
+        { text: "Aktive Komponenten", isCorrect: true },
+        { text: "Sensoren und Aktoren", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Netz-Topologie ist aufgrund ihrer geringen Ausfallsicherheit, bei der ein Fehler am zentralen Kabel zum kompletten Netzausfall führt, als veraltet anzusehen?",
+      answers: [
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Stern-Topologie", isCorrect: false },
+        { text: "Bus-Topologie", isCorrect: true },
+        { text: "Maschen-Topologie", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Topologie-Form hat die höchste Ausfallsicherheit und Redundanz?",
+      answers: [
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Maschen-Topologie", isCorrect: true },
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Stern-Topologie", isCorrect: false }
+      ],
+    },
+    {
+      question: "Was ist der größte Nachteil der Stern-Topologie?",
+      answers: [
+        { text: "Jeder Teilnehmer hat einen zentralen Knotenpunkt.", isCorrect: false },
+        { text: "Schlechte Skalierbarkeit.", isCorrect: false },
+        { text: "Hohe Kosten pro Teilnehmer.", isCorrect: false },
+        { text: "Der Ausfall des zentralen Knotens legt das gesamte Netz lahm.", isCorrect: true }
+      ],
+    },
+    {
+      question: "Was ist eine Sonderform der Stern-Topologie, bei der mehrere zentrale Knotenpunkte miteinander verbunden werden?",
+      answers: [
+        { text: "Linien-Topologie", isCorrect: false },
+        { text: "Baum-Topologie", isCorrect: true },
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Ring-Topologie", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Topologie hat den geringsten Materialaufwand und ist daher am billigsten?",
+      answers: [
+        { text: "Maschen-Topologie", isCorrect: false },
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Stern-Topologie", isCorrect: false },
+        { text: "Bus-Topologie", isCorrect: true }
+      ],
+    },
+    {
+      question: "Welches der folgenden Geräte ist ein Beispiel für eine aktive Netzkomponente?",
+      answers: [
+        { text: "Eine Kupferleitung", isCorrect: false },
+        { text: "Ein Router", isCorrect: true },
+        { text: "Ein Lichtwellenleiter", isCorrect: false },
+        { text: "Eine Antenne für Funkübertragung", isCorrect: false }
+      ],
+    },
+    {
+      question: "Was ist die Definition eines Computernetzes?",
+      answers: [
+        { text: "Ein einzelnes elektronisches System, das Daten verarbeitet.", isCorrect: false },
+        { text: "Eine Anordnung von Geräten, die Signale in Effekte in der Welt umsetzen.", isCorrect: false },
+        { text: "Ein Verbund elektronischer Systeme, die so gekoppelt sind, dass sie miteinander kommunizieren können.", isCorrect: true },
+        { text: "Ein Satz von Regeln, der die Datenübertragung steuert.", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Eigenschaft trifft auf eine Ring-Topologie zu?",
+      answers: [
+        { text: "Alle Teilnehmer sind an einen zentralen Verteiler angeschlossen.", isCorrect: false },
+        { text: "Jeder Teilnehmer ist mit genau zwei weiteren Teilnehmern gekoppelt.", isCorrect: true },
+        { text: "Teilnehmer sind direkt an ein gemeinsames Übertragungsmedium angeschlossen.", isCorrect: false },
+        { text: "Jeder Teilnehmer ist mit jedem anderen Teilnehmer gekoppelt.", isCorrect: false }
       ],
     },
   ]}
