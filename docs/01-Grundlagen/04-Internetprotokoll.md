@@ -113,6 +113,15 @@ Damit eine Nachricht an einen Computer in einem fremden Netz geleitet werden kan
         { text: "IP", isCorrect: true }
       ],
     },
+    {
+      question: "Welcher Begriff bezeichnet das Leiten von Nachrichten zum Zielnetz?",
+      answers: [
+        { text: "Access Point", isCorrect: false },
+        { text: "IP-Adressierung", isCorrect: false },
+        { text: "Switching", isCorrect: false },
+        { text: "Routing", isCorrect: true }
+      ],
+    },
   ]}
 />
 
