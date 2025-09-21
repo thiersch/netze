@@ -16,6 +16,9 @@ const shuffleArray = (array) => {
 };
 
 const Quiz = ({ questions }) => {
+  // Shuffle Fragen einmalig beim Initialisieren
+  const [shuffledQuestions] = useState(() => shuffleArray(questions));
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
@@ -32,11 +35,11 @@ const Quiz = ({ questions }) => {
     setQuizCount(savedQuizCount);
   }, []);
 
-  // Verwende useMemo, um die Antworten nur bei Wechsel der Frage zu mischen
+  // Antworten für die aktuelle Frage mischen
   const shuffledAnswers = useMemo(() => {
-    const currentQuizItem = questions[currentQuestion];
+    const currentQuizItem = shuffledQuestions[currentQuestion];
     return shuffleArray(currentQuizItem.answers);
-  }, [currentQuestion, questions]);
+  }, [currentQuestion, shuffledQuestions]);
 
   const handleAnswerClick = (isCorrect, answerIndex) => {
     setSelectedAnswer(answerIndex);
@@ -45,7 +48,7 @@ const Quiz = ({ questions }) => {
     setAnswersStatus((prevStatus) => [
       ...prevStatus,
       {
-        questionText: questions[currentQuestion].question,
+        questionText: shuffledQuestions[currentQuestion].question,
         isCorrect: isCorrect,
       },
     ]);
@@ -55,7 +58,7 @@ const Quiz = ({ questions }) => {
         setScore((prev) => prev + 1);
       }
 
-      if (currentQuestion + 1 < questions.length) {
+      if (currentQuestion + 1 < shuffledQuestions.length) {
         setCurrentQuestion((prev) => prev + 1);
         setSelectedAnswer(null);
       } else {
@@ -75,7 +78,7 @@ const Quiz = ({ questions }) => {
     }, 1000);
   };
 
-  const totalQuestions = questions.length;
+  const totalQuestions = shuffledQuestions.length;
   const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
   const progressBarWidth = totalQuestions > 0 ? ((currentQuestion + 1) / totalQuestions) * 100 : 0;
 
@@ -116,7 +119,7 @@ const Quiz = ({ questions }) => {
         ></div>
       </div>
       <h3>Frage {currentQuestion + 1} von {totalQuestions}</h3>
-      <p>{questions[currentQuestion].question}</p>
+      <p>{shuffledQuestions[currentQuestion].question}</p>
       <div className={styles.answersContainer}>
         {shuffledAnswers.map((answer, index) => {
           const isSelected = selectedAnswer === index;
