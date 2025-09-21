@@ -4,8 +4,9 @@ title: Computernetze
 
 # Computernetze
 
-Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Systeme**, die so gekoppelt sind, dass sie miteinander kommunizieren können. Solche elektronischen Systeme sind in der Regel Computer, Sensoren und Aktoren. 
+Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Systeme**, die so gekoppelt sind, dass sie miteinander kommunizieren können. Solche elektronischen Systeme sind in der Regel Computer, Sensoren und Aktoren. Geräte, die das Netzwerk nutzen um zu kommunizieren, nennen wir Teilnehmer.
 
+## Computer, Sensoren und Aktoren
 <Columns> 
   <Column className='text--left'>
     #### Computer
@@ -32,9 +33,9 @@ Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Syste
 ---
 
 <details>
-  <summary>Bereit für eine Aufgabe?</summary>
+  <summary>Bereit für eine Übung?</summary>
 
-**Aufgabe**: Ordne die Eigenschaften **Computer**, **Sensor** oder **Aktor** zu.
+**Übung**: Ordne die Eigenschaften **Computer**, **Sensor** oder **Aktor** zu.
 
 <ItemMatch taskData={[
   { id: 'door', text: 'Ein Motor öffnet die Garagentüre.', answer: 'Aktor' },
@@ -42,5 +43,164 @@ Ein **Computernetz** oder **Rechnernetz** ist ein Verbund **elektronischer Syste
   { id: 'chip', text: 'Ein Chip verarbeitet Signale und sendet neue Signale.', answer: 'Computer' },
   { id: 'fan', text: 'Ein Lüfter setzt elektrische Signale in Bewegung um.', answer: 'Aktor' },
 ]} />
+
+</details>
+
+## Aktive und passive Netzkomponenten
+
+Netze werden aus Teilnehmern und passiven sowie aktiven Komponenten gebildet. **Passive Komponenten** bilden das physische Übertragungsmedium, wie Kupferleitungen, Glasfaserleitung oder das Medium für Funkübertragungen (z.B. Luft). Sie dämpfen Signale, wodurch diese während der Übertragung schwächer werden. Jedes Übertragungsmedium hat dadurch eine begrenzte Reichweite. 
+
+**Aktive Komponenten** sind Geräte, die Datenpakete unterwegs verarbeiten und weiterleiten. Sie benötigen Strom und verstärken die Signale oder setzen diese neu aufs Überteragungsmedium auf. Dadurch erhöhen sie die Reichweite der Übertragungsstrecke. Beispiele für aktive Komponenten sind Hubs, Switches, Router, Access Points, Repeater und Bridges.
+
+## Netz-Topologien
+
+Computernetze lassen sich unterschiedlich anordnen. Eine solche Anordnung heißt **Netz-Topologie**.
+
+<Columns> 
+  <Column className='text--center'>
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Netzwerktopologie_Bus.svg/1024px-Netzwerktopologie_Bus.svg.png)
+  </Column>
+  <Column className='text--left'> 
+    #### Bus
+    Alle Teilnehmer sind direkt an ein gemeinsames Übertragunsmedium angeschlossen, ohne aktive Komponenten auf der Strecke. Dieses Übertragungsmedium heißt, wie die Topologie, Bus. Beispiele für Busse sind Leiterplatinen (Mainboards), USB (Universal Serial Bus), CAN-Bus (in modernen Automobilen), Ethernet, WLAN.
+  </Column>
+</Columns>
+
+<Columns>
+  <Column className='text--left'> 
+    #### Ring
+    Jeder Teilnehmer ist (in alten Ring-Topologien) mit genau zwei weiteren Teilnehmern gekoppelt. Teilnehmer fungieren hier als Repeater, weil sie Signale auffrischen. Eine Sonderform der Ringtopologie ist die Linientopologie. Die Ringtopologie ist veraltet und nur theoretisch und historisch interessant.
+  </Column>
+  <Column className='text--center'>
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Netzwerktopologie_Ring.svg/1024px-Netzwerktopologie_Ring.svg.png)
+  </Column>
+</Columns>
+
+<Columns>
+  <Column className='text--center'>
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Netzwerktopologie_Stern.svg/1024px-Netzwerktopologie_Stern.svg.png)
+  </Column>
+  <Column className='text--left'> 
+    #### Stern
+    Alle Teilnehmer sind an einen zentralen Verteiler angeschlossen. Verteiler sind Hubs oder Switche. Aneinandergeschlossene Sterne bilden eine Baum-Topologie.
+  </Column>
+</Columns>
+
+<Columns>
+  <Column className='text--left'> 
+    #### Masche
+    Jeder Teilnehmer ist mit einem oder mehreren anderen Teilnehmern gekoppelt. Bei einem vollständig vermaschten Netz ist jeder Teilnehmer mit jedem anderen Teilnehmer verbunden.
+  </Column>
+  <Column className='text--center'>
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Netzwerktopologie_vermascht.svg/1024px-Netzwerktopologie_vermascht.svg.png)
+  </Column>
+</Columns>
+
+<details>
+  <summary>Aufgabe 1: Topologie-Recherche</summary>
+
+**Aufgabe**: Recherchiere drei Vorteile und drei Nachteile zu den Topologien Bus, Ring, Stern, Masche.
+
+</details>
+
+<details>
+  <summary>Aufgabe 2: Topologie-Quiz</summary>
+
+  Thema: **Vorteile** und **Nachteile** von Netz-Topologien
+
+<Quiz
+  questions={[
+    {
+      question: "Was ist ein Vorteil der Bus-Topologie?",
+      answers: [
+        { text: "Hohe Ausfallsicherheit", isCorrect: false },
+        { text: "Einfache Erweiterung des Netzes", isCorrect: true },
+        { text: "Gezielte Datenübertragung an den Empfänger", isCorrect: false },
+        { text: "Ein Ausfall eines Teilnehmers beeinträchtigt das Netz nicht", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welcher Nachteil ist typisch für die Ring-Topologie?",
+      answers: [
+        { text: "Hoher Verkabelungsaufwand", isCorrect: false },
+        { text: "Ein Fehler in einem Kabel legt den gesamten Ring lahm", isCorrect: true },
+        { text: "Benötigt einen zentralen Knotenpunkt (Hub/Switch)", isCorrect: false },
+        { text: "Schwierige Fehlerdiagnose", isCorrect: true }
+      ],
+    },
+    {
+      question: "Was ist der größte Vorteil der Stern-Topologie?",
+      answers: [
+        { text: "Geringe Kosten", isCorrect: false },
+        { text: "Kein zentraler Knotenpunkt nötig", isCorrect: false },
+        { text: "Hohe Ausfallsicherheit einzelner Teilnehmer", isCorrect: true },
+        { text: "Einfache Verkabelung über ein einziges Kabel", isCorrect: false }
+      ],
+    },
+    {
+      question: "Was ist der größte Nachteil der Stern-Topologie?",
+      answers: [
+        { text: "Jeder Teilnehmer hat einen zentralen Knotenpunkt", isCorrect: false },
+        { text: "Der Ausfall des zentralen Knotens legt das gesamte Netz lahm", isCorrect: true },
+        { text: "Schlechte Skalierbarkeit", isCorrect: false },
+        { text: "Hohe Kosten pro Teilnehmer", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Topologie-Form hat die höchste Ausfallsicherheit und Redundanz?",
+      answers: [
+        { text: "Stern-Topologie", isCorrect: false },
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Maschen-Topologie", isCorrect: true }
+      ],
+    },
+    {
+      question: "Welche Topologie-Form ist die kostspieligste?",
+      answers: [
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Stern-Topologie", isCorrect: false },
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Maschen-Topologie", isCorrect: true }
+      ],
+    },
+    {
+      question: "Was ist eine Sonderform der Stern-Topologie, die mehrere zentrale Knotenpunkte miteinander verbindet?",
+      answers: [
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Baum-Topologie", isCorrect: true },
+        { text: "Linien-Topologie", isCorrect: false }
+      ],
+    },
+    {
+      question: "Was ist ein Nachteil der Bus-Topologie?",
+      answers: [
+        { text: "Die Fehlerdiagnose ist einfach", isCorrect: false },
+        { text: "Die Erweiterung ist aufwendig", isCorrect: false },
+        { text: "Eine Unterbrechung am Kabel legt das gesamte Segment lahm", isCorrect: true },
+        { text: "Hohe Übertragungsgeschwindigkeit", isCorrect: false }
+      ],
+    },
+    {
+      question: "Was ist ein Vorteil der Ring-Topologie?",
+      answers: [
+        { text: "Ein Ausfall eines Teilnehmers legt das Netz lahm", isCorrect: false },
+        { text: "Es gibt keinen zentralen Knotenpunkt, was Kosten spart", isCorrect: true },
+        { text: "Hohe Kosten und hoher Verkabelungsaufwand", isCorrect: false },
+        { text: "Sehr gute Skalierbarkeit", isCorrect: false }
+      ],
+    },
+    {
+      question: "Welche Topologie ist aufgrund ihrer Komplexität und Kosten in der Praxis selten vollständig implementiert, aber Teil des Internets?",
+      answers: [
+        { text: "Bus-Topologie", isCorrect: false },
+        { text: "Stern-Topologie", isCorrect: false },
+        { text: "Ring-Topologie", isCorrect: false },
+        { text: "Maschen-Topologie", isCorrect: true }
+      ],
+    },
+  ]}
+/>
 
 </details>
