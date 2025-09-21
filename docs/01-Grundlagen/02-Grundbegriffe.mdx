@@ -1,0 +1,240 @@
+---
+title: Fachbegriffe in der Kommunikation
+---
+
+# Fachbegriffe in der Kommunikation
+
+In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreiben, **wie Daten übertragen und verteilt werden**. Dieses Kapitel behandelt zentrale Konzepte, darunter Leitungs- und Paketvermittlung, Übertragungsrichtungen, Multiplexing und Adressierungsformen.
+
+---
+
+## Leitungsvermittlung und Paketvermittlung
+
+<Columns>
+  <Column className='text--left'>
+    #### Leitungsvermittlung
+    Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste Verbindung zwischen Sender und Empfänger aufgebaut. 
+    - Vorteil: konstante Bandbreite, geringe Latenz.
+    - Nachteil: ineffizient bei sporadischem Datenverkehr.
+
+    Merkhilfe: Wie ein **Telefonat**, bei dem eine Leitung reserviert wird.
+  </Column>
+  <Column className='text--left'>
+    #### Paketvermittlung
+    Daten werden in **Pakete** zerlegt und unabhängig voneinander über das Netzwerk gesendet.
+    - Vorteil: effizient, robust bei Ausfällen.
+    - Nachteil: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig.
+
+    Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden.
+  </Column>
+</Columns>
+
+<details>
+  <summary>Übung: Vermittlungsarten erkennen</summary>
+
+<ItemMatch taskData={[
+  { id: 'call', text: 'Ein klassisches Telefonat über eine feste Leitung.', answer: 'Leitungsvermittlung' },
+  { id: 'email', text: 'E-Mails werden über das Internet versendet.', answer: 'Paketvermittlung' },
+  { id: 'video', text: 'Live-Video über IP wird paketweise übertragen.', answer: 'Paketvermittlung' },
+  { id: 'landline', text: 'Festnetztelefon während des Gesprächs reserviert die Leitung.', answer: 'Leitungsvermittlung' },
+]} />
+
+</details>
+
+---
+
+## Übertragungsrichtungen: unidirektional vs. bidirektional
+
+<Columns>
+  <Column className='text--left'>
+    #### Unidirektional
+    Daten fließen nur in eine Richtung. Beispiele: Radio, TV.
+
+    Merkhilfe: Wie ein **Einbahnstraßenverkehr**.
+  </Column>
+  <Column className='text--left'>
+    #### Bidirektional
+    Daten können in beide Richtungen fließen. Beispiele: Telefon, Chat.
+
+    Merkhilfe: Wie ein **Zweirichtungsverkehr**.
+  </Column>
+</Columns>
+
+---
+
+## Multiplexing: Simplex, Halbduplex, Vollduplex
+
+<Columns>
+  <Column className='text--left'>
+    #### Simplex
+    Daten fließen nur in **eine Richtung**, ohne Rückmeldung. 
+    Beispiel: Fernsehsender.
+
+    Merkhilfe: Ein **Radio** kann nur empfangen.
+  </Column>
+  <Column className='text--left'>
+    #### Halbduplex
+    Daten fließen **abwechselnd** in beide Richtungen. 
+    Beispiel: Walkie-Talkie.
+
+    Merkhilfe: Einer spricht, der andere hört zu, dann umgekehrt.
+  </Column>
+  <Column className='text--left'>
+    #### Vollduplex
+    Daten fließen **gleichzeitig** in beide Richtungen. 
+    Beispiel: modernes Telefon oder VoIP.
+
+    Merkhilfe: Wie ein **normales Gespräch**, beide können gleichzeitig sprechen.
+  </Column>
+</Columns>
+
+<details>
+  <summary>Übung: Übertragungsmodus bestimmen</summary>
+
+<ItemMatch taskData={[
+  { id: 'tv', text: 'Fernsehsignal', answer: 'Simplex' },
+  { id: 'walkie', text: 'Walkie-Talkie', answer: 'Halbduplex' },
+  { id: 'phone', text: 'VoIP-Telefonat', answer: 'Vollduplex' },
+]} />
+
+</details>
+
+---
+
+## Adressierungsformen: unicast, broadcast, multicast, anycast
+
+<Columns>
+  <Column className='text--left'>
+    #### Unicast
+    Daten werden von einem Sender **an genau einen Empfänger** gesendet.
+    Beispiel: Private E-Mail.
+  </Column>
+  <Column className='text--left'>
+    #### Broadcast
+    Daten werden von einem Sender **an alle Empfänger** im Netzwerk gesendet.
+    Beispiel: ARP-Request im LAN.
+  </Column>
+  <Column className='text--left'>
+    #### Multicast
+    Daten werden an eine **bestimmte Gruppe von Empfängern** gesendet.
+    Beispiel: Video-Konferenz.
+  </Column>
+  <Column className='text--left'>
+    #### Anycast
+    Daten werden an **den nächstgelegenen von mehreren möglichen Empfängern** gesendet.
+    Beispiel: DNS-Abfrage zu einem nahegelegenen Server.
+  </Column>
+</Columns>
+
+<details>
+  <summary>Übung: Adressierungsarten erkennen</summary>
+
+<ItemMatch taskData={[
+  { id: 'email', text: 'Eine E-Mail an eine einzelne Person', answer: 'Unicast' },
+  { id: 'lan', text: 'ARP-Request an alle Geräte im LAN', answer: 'Broadcast' },
+  { id: 'video', text: 'Video-Stream an registrierte Teilnehmer', answer: 'Multicast' },
+  { id: 'dns', text: 'DNS-Abfrage zum nächsten Server', answer: 'Anycast' },
+]} />
+
+</details>
+
+---
+## Datenübertragung: Parallel vs. Seriell
+<Columns>
+<Column className='text--left'>
+#### Parallel
+Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
+- Vorteil: hohe Übertragungsrate bei kurzen Distanzen.  
+- Nachteil: Störungen und Signalverluste über lange Strecken.  
+Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
+</Column>
+
+<Column className='text--left'>
+#### Seriell
+Daten werden **nacheinander über eine einzige Leitung** übertragen.  
+- Vorteil: zuverlässig über längere Strecken, weniger Leitungen nötig.  
+- Nachteil: geringere Geschwindigkeit im Vergleich zu Parallel bei kurzen Distanzen.  
+Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
+</Column>
+</Columns>
+
+<details>
+<summary>Übung: Übertragungsart erkennen</summary>
+<ItemMatch taskData={[
+  { id: 'usb', text: 'Daten werden nacheinander über eine Leitung übertragen (z.B. USB)', answer: 'Seriell' },
+  { id: 'ide', text: 'Frühere Festplattenverbindung über mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'pci', text: 'Früherer Bus für interne PC-Komponenten, mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'ethernet', text: 'Moderne Netzwerkkabel übertragen Bits nacheinander', answer: 'Seriell' },
+]} />
+</details>
+
+---
+## Teste dein Wissen! (erweitert)
+<details>
+<summary>Bereit für das Quiz?</summary>
+<Quiz questions={[
+  {
+    question: "Welche Vermittlungsart reserviert eine feste Verbindung zwischen Sender und Empfänger?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: false },
+      { text: "Leitungsvermittlung", isCorrect: true },
+      { text: "Unicast", isCorrect: false },
+      { text: "Multiplexing", isCorrect: false }
+    ],
+  },
+  {
+    question: "Welche Übertragungsart ermöglicht gleichzeitiges Sprechen und Hören?",
+    answers: [
+      { text: "Simplex", isCorrect: false },
+      { text: "Halbduplex", isCorrect: false },
+      { text: "Vollduplex", isCorrect: true },
+      { text: "Unidirektional", isCorrect: false }
+    ],
+  },
+  {
+    question: "Welche Adressierungsform sendet Daten an alle Teilnehmer im Netzwerk?",
+    answers: [
+      { text: "Broadcast", isCorrect: true },
+      { text: "Unicast", isCorrect: false },
+      { text: "Multicast", isCorrect: false },
+      { text: "Anycast", isCorrect: false }
+    ],
+  },
+  {
+    question: "Welche Adressierungsform wählt den nächstgelegenen Empfänger?",
+    answers: [
+      { text: "Multicast", isCorrect: false },
+      { text: "Anycast", isCorrect: true },
+      { text: "Broadcast", isCorrect: false },
+      { text: "Unicast", isCorrect: false }
+    ],
+  },
+  {
+    question: "Ein Walkie-Talkie spricht und hört abwechselnd. Welche Übertragungsart ist das?",
+    answers: [
+      { text: "Simplex", isCorrect: false },
+      { text: "Halbduplex", isCorrect: true },
+      { text: "Vollduplex", isCorrect: false },
+      { text: "Bidirektional", isCorrect: false }
+    ],
+  },
+  {
+    question: "Daten werden gleichzeitig über mehrere Leitungen übertragen. Welche Art ist das?",
+    answers: [
+      { text: "Seriell", isCorrect: false },
+      { text: "Parallel", isCorrect: true },
+      { text: "Halbduplex", isCorrect: false },
+      { text: "Simplex", isCorrect: false }
+    ],
+  },
+  {
+    question: "Daten werden nacheinander über eine Leitung übertragen. Welche Art ist das?",
+    answers: [
+      { text: "Seriell", isCorrect: true },
+      { text: "Parallel", isCorrect: false },
+      { text: "Vollduplex", isCorrect: false },
+      { text: "Bidirektional", isCorrect: false }
+    ],
+  },
+]} />
+</details>
