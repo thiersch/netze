@@ -4,7 +4,9 @@ title: Fachbegriffe in der Kommunikation
 
 # Fachbegriffe in der Kommunikation
 
-In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreiben, **wie Daten übertragen und verteilt werden**. Dieses Kapitel behandelt zentrale Konzepte, darunter Leitungs- und Paketvermittlung, Übertragungsrichtungen, Multiplexing und Adressierungsformen.
+In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreiben, **wie Daten übertragen und verteilt werden**. Dieses Kapitel behandelt zentrale Konzepte, darunter Leitungs- und Paketvermittlung, Übertragungsrichtungen, Multiplexing und Adressierungsformen. 
+
+Die Konzepte überschneiden sich teilweise, da sie unterschiedliche Aspekte von Maschinenkommunikation umfassen.
 
 ---
 
@@ -14,18 +16,18 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
   <Column className='text--left'>
     #### Leitungsvermittlung
     Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste **Verbindung** zwischen Sender und Empfänger aufgebaut. 
-    - Vorteil: konstante Bandbreite, geringe Latenz.
-    - Nachteil: ineffizient bei sporadischem Datenverkehr.
+    - Vorteile: konstante Bandbreite, geringe Latenz.
+    - Nachteile: ineffizient bei sporadischem Datenverkehr.
 
     Merkhilfe: Wie ein **Telefonat**, bei dem eine Leitung reserviert wird. Wenn die Sprechenden einschlafen, bleiben die Ressourcen reserviert.
   </Column>
   <Column className='text--left'>
     #### Paketvermittlung
     Daten werden in **Pakete** zerlegt und unabhängig voneinander über ein Netzwerk gesendet.
-    - Vorteil: effizient, robust bei Ausfällen.
-    - Nachteil: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig. Jede Einheit muss Anfang, Ende und Zieladresse haben.
+    - Vorteile: effiziente Ressourcennutzung, robust bei Ausfällen, da alternative Routen genommen werden können.
+    - Nachteile: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig. Jede Einheit muss Anfang, Ende und Zieladresse haben.
 
-    Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden.
+    Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden. Jeder Brief passt in einen klar definierten Umschlag, hat also klaren Anfang und klares Ende und trägt mindestens eine Zieladresse.
   </Column>
 </Columns>
 
@@ -41,9 +43,15 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
 
 </details>
 
+Leitungsvermittlung hat die größten Vorteile, wenn für die gesamte Dauer der Verbindung auf der ganzen Bandbreite kommuniziert wird. Ineffizient wird Leitungsvermittlung, sobald längere Pausen entstehen oder nur ein geringer Teil der Bandbreite genutzt wird. Beispiel: Wir telefonieren drei Stunden lang und sagen nur fünf Wörter.
+
+Paketvermittlung hat die größten Vorteile, wenn mit längeren Pausen kommuniziert wird oder redundante Streckenteile ausfallen. Wenn bei vielen Paketen der Nachrichtenanteil kleiner ist als die Adresse, wird Paketvermittlung ineffizient. Wir sprechen dann von hohem **Overhead**. Beispiel: Wir senden jedes Wort eines Buches einzeln in einem eigenen Brief.
+
+
+
 ---
 
-## Übertragungsrichtungen: unidirektional vs. bidirektional
+## Übertragungsrichtungen: Unidirektional vs. Bidirektional
 
 <Columns>
   <Column className='text--left'>
@@ -144,19 +152,21 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
 <Column className='text--left'>
 #### Parallel
 Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
-- Vorteil: hohe Übertragungsrate bei kurzen Distanzen.  
-- Nachteil: Störungen und Signalverluste über lange Strecken.  
+- Vorteile: hohe Übertragungsrate bei extrem kurzen Distanzen.  
+- Nachteile: Störungen und Signalverluste über mittlere und lange Strecken, Laufzeitunterschiede der einzelnen Leitungen bremsen die Übertragung, was bei hohen Taktraten deutlich wird. 
 Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
 </Column>
 
 <Column className='text--left'>
 #### Seriell
 Daten werden **nacheinander über eine einzige Leitung** übertragen.  
-- Vorteil: zuverlässig über längere Strecken, weniger Leitungen nötig.  
-- Nachteil: geringere Geschwindigkeit im Vergleich zu Parallel bei kurzen Distanzen.  
+- Vorteile: zuverlässig über längere Strecken, weniger Leitungen nötig. Mit moderner Technik auch auf relativ kurzen Strecken überlegen.
+- Nachteile: geringere Geschwindigkeit im Vergleich zu Parallel bei extrem kurzen Distanzen und niedrigen Frequenzen.  
 Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
 </Column>
 </Columns>
+
+Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzwischen dominieren fast überall serielle Verfahren (z.B. USB, SATA, PCI Express), weil inzwischen sehr viel höhere Taktraten möglich sind. Nur noch extrem kurze Distanzen (z.B. die Kommunikation zwischen Prozessor und Speicher) sind für die parallele Kommunikation ausgelegt. Doch werden auch hier zunehmend hybride Verfahren eingesetzt.
 
 <details>
 <summary>Übung: Übertragungsart erkennen</summary>
@@ -169,7 +179,7 @@ Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
 </details>
 
 ---
-## Teste dein Wissen! (erweitert)
+## Teste dein Wissen!
 <details>
 <summary>Bereit für das Quiz?</summary>
 <Quiz questions={[
@@ -180,6 +190,15 @@ Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
       { text: "Leitungsvermittlung", isCorrect: true },
       { text: "Unicast", isCorrect: false },
       { text: "Multiplexing", isCorrect: false }
+    ],
+  },
+  {
+    question: "Bob sendet Alice ein Kochrezept. Für jede der 16 Anweisungen schreibt er eine eigene E-Mail.",
+    answers: [
+      { text: "Effiziente Nutzung der Leitungsvermittlung", isCorrect: false },
+      { text: "Ineffiziente Nutzung der Paketvermittlung. Overhead ist zu hoch", isCorrect: true },
+      { text: "Sinnvolle Verwendung von bidirektionaler Kommunikation", isCorrect: false },
+      { text: "Wenig sinnvolle Nutzung der Leitungsvermittlung. Ressourcen werden verschwendet.", isCorrect: false }
     ],
   },
   {
@@ -210,7 +229,34 @@ Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
     ],
   },
   {
+    question: "Du fährst durch Hessen und siehst einen Unfall. Nachdem du die Unfallstelle abgesichert hast, wählst du den Notruf 112. Welche Adressierungsform wird beim Notruf genutzt?",
+    answers: [
+      { text: "Multicast", isCorrect: false },
+      { text: "Anycast", isCorrect: true },
+      { text: "Broadcast", isCorrect: false },
+      { text: "Unicast", isCorrect: false }
+    ],
+  },
+  {
+    question: "Du hast die Aufgaben für die nächste Klassenarbeit 'gefunden'. Du sendest sie nicht in die Klassengruppe, sondern an deine drei Klassen-Homies. Welche Adressierungsart hast du genutzt?",
+    answers: [
+      { text: "Multicast", isCorrect: true },
+      { text: "Anycast", isCorrect: false },
+      { text: "Broadcast", isCorrect: false },
+      { text: "Unicast", isCorrect: false }
+    ],
+  },
+  {
     question: "Ein Walkie-Talkie spricht und hört abwechselnd. Welche Übertragungsart ist das?",
+    answers: [
+      { text: "Simplex", isCorrect: false },
+      { text: "Halbduplex", isCorrect: true },
+      { text: "Vollduplex", isCorrect: false },
+      { text: "Bidirektional", isCorrect: false }
+    ],
+  },
+  {
+    question: "Wegen einer Baustelle ist die Landstraße streckenweise einspurig. Eine Ampel regelt, welche Fahrtrichtung die Engstelle gerade befahren darf. Welche Übertragungsart ist das?",
     answers: [
       { text: "Simplex", isCorrect: false },
       { text: "Halbduplex", isCorrect: true },
