@@ -13,17 +13,17 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
 <Columns>
   <Column className='text--left'>
     #### Leitungsvermittlung
-    Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste Verbindung zwischen Sender und Empfänger aufgebaut. 
+    Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste **Verbindung** zwischen Sender und Empfänger aufgebaut. 
     - Vorteil: konstante Bandbreite, geringe Latenz.
     - Nachteil: ineffizient bei sporadischem Datenverkehr.
 
-    Merkhilfe: Wie ein **Telefonat**, bei dem eine Leitung reserviert wird.
+    Merkhilfe: Wie ein **Telefonat**, bei dem eine Leitung reserviert wird. Wenn die Sprechenden einschlafen, bleiben die Ressourcen reserviert.
   </Column>
   <Column className='text--left'>
     #### Paketvermittlung
-    Daten werden in **Pakete** zerlegt und unabhängig voneinander über das Netzwerk gesendet.
+    Daten werden in **Pakete** zerlegt und unabhängig voneinander über ein Netzwerk gesendet.
     - Vorteil: effizient, robust bei Ausfällen.
-    - Nachteil: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig.
+    - Nachteil: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig. Jede Einheit muss Anfang, Ende und Zieladresse haben.
 
     Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden.
   </Column>
@@ -33,7 +33,7 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
   <summary>Übung: Vermittlungsarten erkennen</summary>
 
 <ItemMatch taskData={[
-  { id: 'call', text: 'Ein klassisches Telefonat über eine feste Leitung.', answer: 'Leitungsvermittlung' },
+  { id: 'call', text: 'Ein Telefonat über ein Dosentelefon mit gespannter Schnur.', answer: 'Leitungsvermittlung' },
   { id: 'email', text: 'E-Mails werden über das Internet versendet.', answer: 'Paketvermittlung' },
   { id: 'video', text: 'Live-Video über IP wird paketweise übertragen.', answer: 'Paketvermittlung' },
   { id: 'landline', text: 'Festnetztelefon während des Gesprächs reserviert die Leitung.', answer: 'Leitungsvermittlung' },
@@ -50,13 +50,13 @@ In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreib
     #### Unidirektional
     Daten fließen nur in eine Richtung. Beispiele: Radio, TV.
 
-    Merkhilfe: Wie ein **Einbahnstraßenverkehr**.
+    Merkhilfe: **Einbahnstraße**.
   </Column>
   <Column className='text--left'>
     #### Bidirektional
     Daten können in beide Richtungen fließen. Beispiele: Telefon, Chat.
 
-    Merkhilfe: Wie ein **Zweirichtungsverkehr**.
+    Merkhilfe: Wie ein **Zweispurige Straße, zwei Fahrtrichtungen**.
   </Column>
 </Columns>
 

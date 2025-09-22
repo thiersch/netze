@@ -14,6 +14,9 @@ const ItemMatch = ({ taskData }) => {
   const [totalScore, setTotalScore] = useState(0);
   const [taskCount, setTaskCount] = useState(0);
 
+  // Extrahiere alle einzigartigen Antwortmöglichkeiten aus taskData
+  const allChoices = [...new Set(taskData.map(item => item.answer))];
+
   // Lade die persistenten Daten beim Initialisieren
   useEffect(() => {
     const savedTotalScore = parseInt(Cookies.get(EXERCISE_SCORE_COOKIE) || '0', 10);
@@ -53,7 +56,8 @@ const ItemMatch = ({ taskData }) => {
           <div key={item.id} className={styles.itemWrapper}>
             <span className={styles.itemText}>{item.text}</span>
             <div className={styles.classificationButtons}>
-              {['Sensor', 'Aktor', 'Computer'].map((type) => {
+              {/* Hier werden die dynamisch erzeugten Antwortmöglichkeiten verwendet */}
+              {allChoices.map((type) => {
                 const selected = userAnswers[item.id] && userAnswers[item.id].classification === type;
                 const evaluated =
                   taskCompleted && selected

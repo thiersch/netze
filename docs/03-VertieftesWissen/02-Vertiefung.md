@@ -1,1 +1,0 @@
-Das Kapitel für alle, die die Grundlagen bereits kennen.
