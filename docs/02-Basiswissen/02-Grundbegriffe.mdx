@@ -16,16 +16,16 @@ Die Konzepte überschneiden sich teilweise, da sie unterschiedliche Aspekte von 
   <Column className='text--left'>
     #### Leitungsvermittlung
     Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste **Verbindung** zwischen Sender und Empfänger aufgebaut. 
-    - Vorteile: konstante Bandbreite, geringe Latenz.
+    - Vorteile: konstante Bandbreite, geringe Latenz. Kann eine garantierte Qualität bieten.
     - Nachteile: ineffizient bei sporadischem Datenverkehr.
 
-    Merkhilfe: Wie ein **Telefonat**, bei dem eine Leitung reserviert wird. Wenn die Sprechenden einschlafen, bleiben die Ressourcen reserviert.
+    Merkhilfe: Wie ein **Telefonat**, bei dem (wie früher) eine physische Leitung reserviert wird. Wenn die Sprechenden einschlafen, bleiben die Ressourcen reserviert.
   </Column>
   <Column className='text--left'>
     #### Paketvermittlung
     Daten werden in **Pakete** zerlegt und unabhängig voneinander über ein Netzwerk gesendet.
     - Vorteile: effiziente Ressourcennutzung, robust bei Ausfällen, da alternative Routen genommen werden können.
-    - Nachteile: Pakete können in falscher Reihenfolge ankommen, zusätzliche Verarbeitung nötig. Jede Einheit muss Anfang, Ende und Zieladresse haben.
+    - Nachteile: Pakete können in falscher Reihenfolge ankommen, was zusätzliche Verarbeitung nötig macht. Kann keine garantierte Qualität bieten. Wenn Knotenpunkte stark belastet sind, kommt es zu Stau. Wenn Knotenpunkte überlastet sind, kommt es zu Paketverlust. Jede Einheit muss Anfang, Ende und Zieladresse haben.
 
     Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden. Jeder Brief passt in einen klar definierten Umschlag, hat also klaren Anfang und klares Ende und trägt mindestens eine Zieladresse.
   </Column>
@@ -43,10 +43,23 @@ Die Konzepte überschneiden sich teilweise, da sie unterschiedliche Aspekte von 
 
 </details>
 
-Leitungsvermittlung hat die größten Vorteile, wenn für die gesamte Dauer der Verbindung auf der ganzen Bandbreite kommuniziert wird. Ineffizient wird Leitungsvermittlung, sobald längere Pausen entstehen oder nur ein geringer Teil der Bandbreite genutzt wird. Beispiel: Wir telefonieren drei Stunden lang und sagen nur fünf Wörter.
+Leitungsvermittlung hat die größten Vorteile, wenn für die gesamte Dauer der Verbindung auf der ganzen Bandbreite kommuniziert wird. Ineffizient wird Leitungsvermittlung, sobald signifikante Pausen entstehen oder nur ein geringer Teil der Bandbreite genutzt wird. Beispiel: Wir telefonieren drei Stunden lang und sagen nur fünf Wörter.
 
-Paketvermittlung hat die größten Vorteile, wenn mit längeren Pausen kommuniziert wird oder redundante Streckenteile ausfallen. Wenn bei vielen Paketen der Nachrichtenanteil kleiner ist als die Adresse, wird Paketvermittlung ineffizient. Wir sprechen dann von hohem **Overhead**. Beispiel: Wir senden jedes Wort eines Buches einzeln in einem eigenen Brief.
+Paketvermittlung hat die größten Vorteile, wenn mit Pausen kommuniziert wird oder redundante Streckenteile ausfallen. Wenn bei vielen Paketen der Nachrichtenanteil kleiner ist als die Adresse, wird Paketvermittlung ineffizient. Wir sprechen dann von hohem **Overhead**. Beispiel: Wir senden jedes Wort eines Buches einzeln in einem eigenen Brief.
 
+:::danger[Nur Schwitzer klicken hier]
+<details>
+  <summary>Historisches für **Nerd-Talk** und ein **Spoiler**</summary>
+
+Inzwischen hat sich die Paketvermittlung auch in der Telefonie durchgesetzt. 1999 wurde DSL als erste paketvermittelte Infrastruktur für das Internet eingeführt. Das deutsche Festnetz war noch bis 2015 weitgehend leitungsvermittelt. Beim Telefonieren gab es eine durchgängige physische Leitung zwischen den Teilnehmern. Zwischen 2015 und 2020 wurden die alten Kupferleitungen der örtlichen und überörtlichen Netze durch Glasfaserstrecken ersetzt und ein All-IP-Netz aufgebaut, das nur noch paketvermittelt arbeitet. 
+
+Gleichzeitig wird, besonders bei interner Telefonie innerhalb von Unternehmen oder Behörden, Voice-over-IP (VoIP) eingesetzt. VoIP nutzt das Internetprotokoll (IP), das ebenfalls paketvermittelt arbeitet. VoIP nutzt die bestehenden Datennetze und verursacht keine gesonderten Verbindungskosten. Skype, WhatsApp, Signal und Telegram nutzen ebenfalls VoIP für Audioanrufe.
+
+Details zu VoIP lernen wir erst viel später.
+
+</details>
+
+:::
 
 
 ---
@@ -109,7 +122,7 @@ Paketvermittlung hat die größten Vorteile, wenn mit längeren Pausen kommunizi
 
 ---
 
-## Adressierungsformen: unicast, broadcast, multicast, anycast
+## Adressierungsformen: Unicast, Broadcast, Multicast, Anycast
 
 <Columns>
   <Column className='text--left'>
@@ -184,7 +197,7 @@ Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzw
 <summary>Bereit für das Quiz?</summary>
 <Quiz questions={[
   {
-    question: "Welche Vermittlungsart reserviert eine feste Verbindung zwischen Sender und Empfänger?",
+    question: "Welche Vermittlungsart reserviert eine physische Verbindung zwischen Sender und Empfänger?",
     answers: [
       { text: "Paketvermittlung", isCorrect: false },
       { text: "Leitungsvermittlung", isCorrect: true },
@@ -192,6 +205,53 @@ Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzw
       { text: "Multiplexing", isCorrect: false }
     ],
   },
+  {
+    question: "Welche Vermittlungsart bietet eine garantierte Qualität?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: false },
+      { text: "Leitungsvermittlung", isCorrect: true },
+      { text: "Heiratsvermittlung", isCorrect: false },
+      { text: "Polizeinotruf 110", isCorrect: false }
+    ],
+  },
+  {
+    question: "Bei welcher Vermittlungsart ist Stau möglich, aus dem Verzögerung (hohe Latenz) resultiert?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: true },
+      { text: "Leitungsvermittlung", isCorrect: false },
+      { text: "Haustiervermittlung", isCorrect: false },
+      { text: "Fahrgemeinschaftsvermittlung", isCorrect: false }
+    ],
+  },
+    {
+    question: "Welche Technologie hat sich inzwischen auch in Bereichen durchgesetzt, wo früher eine andere dominierte?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: true },
+      { text: "Leitungsvermittlung", isCorrect: false },
+      { text: "Serielle Übertragung", isCorrect: true },
+      { text: "Parallele Übertragung", isCorrect: false }
+    ],
+  },
+  {
+    question: "Bei welcher Vermittlungsart ist Überlastung möglich, aus der Paketverlust resultiert?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: true },
+      { text: "Leitungsvermittlung", isCorrect: false },
+      { text: "Global Unicast", isCorrect: false },
+      { text: "Jobvermittlung", isCorrect: false }
+    ],
+  },
+
+  {
+    question: "Welche Vermittlungsart kann keine garantierte Qualität bieten?",
+    answers: [
+      { text: "Paketvermittlung", isCorrect: true },
+      { text: "Leitungsvermittlung", isCorrect: false },
+      { text: "Unicast", isCorrect: false },
+      { text: "Multiplexing", isCorrect: false }
+    ],
+  },
+
   {
     question: "Bob sendet Alice ein Kochrezept. Für jede der 16 Anweisungen schreibt er eine eigene E-Mail.",
     answers: [
@@ -229,7 +289,7 @@ Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzw
     ],
   },
   {
-    question: "Du fährst durch Hessen und siehst einen Unfall. Nachdem du die Unfallstelle abgesichert hast, wählst du den Notruf 112. Welche Adressierungsform wird beim Notruf genutzt?",
+    question: "Du fährst durch Hessen und siehst einen Unfall. Nachdem du die Unfallstelle abgesichert hast, wählst du den Notruf 112. Welche Adressierungsform wird intern beim Notruf genutzt?",
     answers: [
       { text: "Multicast", isCorrect: false },
       { text: "Anycast", isCorrect: true },
@@ -238,7 +298,7 @@ Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzw
     ],
   },
   {
-    question: "Du hast die Aufgaben für die nächste Klassenarbeit 'gefunden'. Du sendest sie nicht in die Klassengruppe, sondern an deine drei Klassen-Homies. Welche Adressierungsart hast du genutzt?",
+    question: "Du hast die Aufgaben für die nächste Klassenarbeit 'gefunden'. Du sendest sie nicht in die Klassengruppe, sondern an deine drei Lieblingsklassenkameraden. Welche Adressierungsart hast du genutzt?",
     answers: [
       { text: "Multicast", isCorrect: true },
       { text: "Anycast", isCorrect: false },

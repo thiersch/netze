@@ -28,3 +28,11 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Own Style: details inside admonition-danger. */
+
+.theme-admonition-danger details {
+  background-color: var(--ifm-danger-background-color);
+  border: 1px solid var(--ifm-danger-border-color);
+  border-radius: var(--ifm-alert-border-radius);
+}
