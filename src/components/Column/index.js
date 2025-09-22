@@ -1,17 +1,16 @@
 import React from 'react';
-// Import clsx library for conditional classes.
-import clsx from 'clsx'; 
+import clsx from 'clsx';
+import styles from './Column.module.css';
 
-// Define the Column component as a function 
-// with children, className, style as properties
-// Look https://infima.dev/docs/ for learn more
-// Style only affects the element inside the column, but we could have also made the same distinction as for the classes.
-export default function Column({ children , className, style  }) {
+export default function Column({ children, className, style, align }) {
   return (
-  
-      <div className={clsx('col' , className)} style={style}>
-        {children}
-      </div>
-  
+    <div
+      className={clsx('col', className, {
+        [styles.columnStretch]: align === 'stretch',
+      })}
+      style={style}
+    >
+      {children}
+    </div>
   );
 }

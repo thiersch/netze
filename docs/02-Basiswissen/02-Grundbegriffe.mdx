@@ -10,135 +10,6 @@ Die Konzepte überschneiden sich teilweise, da sie unterschiedliche Aspekte von 
 
 ---
 
-## Übertragungsrichtungen: Unidirektional vs. Bidirektional
-
-<Columns>
-  <Column className='text--left'>
-    #### Unidirektional
-    Daten fließen nur in eine Richtung. Beispiele: Radio, TV.
-
-    Merkhilfe: **Einbahnstraße**.
-  </Column>
-  <Column className='text--left'>
-    #### Bidirektional
-    Daten können in beide Richtungen fließen. Beispiele: Telefon, Chat.
-
-    Merkhilfe: **Zweispurige Straße mit zwei Fahrtrichtungen**.
-  </Column>
-</Columns>
-
----
-
-## Multiplexing: Simplex, Halbduplex, Vollduplex
-
-<Columns>
-  <Column className='text--left'>
-    #### Simplex
-    Daten fließen nur in **eine Richtung**, ohne Rückmeldung. 
-    Beispiel: Fernsehsender.
-
-    Merkhilfe: Ein **Radio** kann nur empfangen.
-  </Column>
-  <Column className='text--left'>
-    #### Halbduplex
-    Daten fließen **abwechselnd** in beide Richtungen. 
-    Beispiel: Walkie-Talkie.
-
-    Merkhilfe: Einer spricht, der andere hört zu, dann umgekehrt.
-  </Column>
-  <Column className='text--left'>
-    #### Vollduplex
-    Daten fließen **gleichzeitig** in beide Richtungen. 
-    Beispiel: modernes Telefon oder VoIP.
-
-    Merkhilfe: Wie ein **normales Gespräch**, beide können gleichzeitig sprechen.
-  </Column>
-</Columns>
-
-<details>
-  <summary>Übung: Übertragungsmodus bestimmen</summary>
-
-<ItemMatch taskData={[
-  { id: 'tv', text: 'Fernsehsignal', answer: 'Simplex' },
-  { id: 'walkie', text: 'Walkie-Talkie', answer: 'Halbduplex' },
-  { id: 'phone', text: 'VoIP-Telefonat', answer: 'Vollduplex' },
-]} />
-
-</details>
-
----
-
-## Adressierungsformen: Unicast, Broadcast, Multicast, Anycast
-
-<Columns>
-  <Column className='text--left'>
-    #### Unicast
-    Daten werden von einem Sender **an genau einen Empfänger** gesendet.
-    Beispiel: Private E-Mail.
-  </Column>
-  <Column className='text--left'>
-    #### Broadcast
-    Daten werden von einem Sender **an alle Empfänger** im Netzwerk gesendet.
-    Beispiel: ARP-Request im LAN.
-  </Column>
-  <Column className='text--left'>
-    #### Multicast
-    Daten werden an eine **bestimmte Gruppe von Empfängern** gesendet.
-    Beispiel: Video-Konferenz.
-  </Column>
-  <Column className='text--left'>
-    #### Anycast
-    Daten werden an **den nächstgelegenen von mehreren möglichen Empfängern** gesendet.
-    Beispiel: DNS-Abfrage zu einem nahegelegenen Server.
-  </Column>
-</Columns>
-
-<details>
-  <summary>Übung: Adressierungsarten erkennen</summary>
-
-<ItemMatch taskData={[
-  { id: 'email', text: 'Eine E-Mail an eine einzelne Person', answer: 'Unicast' },
-  { id: 'lan', text: 'ARP-Request an alle Geräte im LAN', answer: 'Broadcast' },
-  { id: 'video', text: 'Video-Stream an registrierte Teilnehmer', answer: 'Multicast' },
-  { id: 'dns', text: 'DNS-Abfrage zum nächsten Server', answer: 'Anycast' },
-]} />
-
-</details>
-
----
-## Datenübertragung: Parallel vs. Seriell
-<Columns>
-<Column className='text--left'>
-#### Parallel
-Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
-- Vorteile: hohe Übertragungsrate bei extrem kurzen Distanzen.  
-- Nachteile: Störungen und Signalverluste über mittlere und lange Strecken, Laufzeitunterschiede der einzelnen Leitungen bremsen die Übertragung, was bei hohen Taktraten deutlich wird. 
-Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
-</Column>
-
-<Column className='text--left'>
-#### Seriell
-Daten werden **nacheinander über eine einzige Leitung** übertragen.  
-- Vorteile: zuverlässig über längere Strecken, weniger Leitungen nötig. Mit moderner Technik auch auf relativ kurzen Strecken überlegen.
-- Nachteile: geringere Geschwindigkeit im Vergleich zu Parallel bei extrem kurzen Distanzen und niedrigen Frequenzen.  
-Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
-</Column>
-</Columns>
-
-Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzwischen dominieren fast überall serielle Verfahren (z.B. USB, SATA, PCI Express), weil inzwischen sehr viel höhere Taktraten möglich sind. Nur noch extrem kurze Distanzen (z.B. die Kommunikation zwischen Prozessor und Speicher) sind für die parallele Kommunikation ausgelegt. Doch werden auch hier zunehmend hybride Verfahren eingesetzt.
-
-<details>
-<summary>Übung: Übertragungsart erkennen</summary>
-<ItemMatch taskData={[
-  { id: 'usb', text: 'Daten werden nacheinander über eine Leitung übertragen (z.B. USB)', answer: 'Seriell' },
-  { id: 'ide', text: 'Frühere Festplattenverbindung über mehrere Leitungen gleichzeitig', answer: 'Parallel' },
-  { id: 'pci', text: 'Früherer Bus für interne PC-Komponenten, mehrere Leitungen gleichzeitig', answer: 'Parallel' },
-  { id: 'ethernet', text: 'Moderne Netzwerkkabel übertragen Bits nacheinander', answer: 'Seriell' },
-]} />
-</details>
-
----
-
 ## Leitungsvermittlung und Paketvermittlung
 
 <Columns>
@@ -189,6 +60,144 @@ Details zu VoIP lernen wir erst viel später.
 </details>
 
 :::
+
+---
+
+## Übertragungsrichtungen: Unidirektional vs. Bidirektional
+
+<Columns>
+  <Column className='text--left'>
+    #### Unidirektional
+    Daten fließen nur in eine Richtung. Beispiele: Radio, TV.
+
+    Merkhilfe: **Einbahnstraße**.
+  </Column>
+  <Column className='text--left'>
+    #### Bidirektional
+    Daten können in beide Richtungen fließen. Beispiele: Telefon, Chat.
+
+    Merkhilfe: **Zweispurige Straße mit zwei Fahrtrichtungen**.
+  </Column>
+</Columns>
+
+---
+
+## Multiplexing: Simplex, Halbduplex, Vollduplex
+
+<Columns>
+  <Column align="stretch">
+    #### Simplex
+    Daten fließen nur in **eine Richtung**, ohne Rückmeldung. 
+    Beispiel: Fernsehsender.
+
+    Merkhilfe: Ein **Radio** kann nur empfangen.
+  </Column>
+  <Column align="stretch">
+    #### Halbduplex
+    Daten fließen **abwechselnd** in beide Richtungen. 
+    Beispiel: Walkie-Talkie.
+
+    Merkhilfe: Einer spricht, der andere hört zu, dann umgekehrt.
+  </Column>
+  <Column align="stretch">
+    #### Vollduplex
+    Daten fließen **gleichzeitig** in beide Richtungen. 
+    Beispiel: modernes Telefon oder VoIP.
+
+    Merkhilfe: Wie ein **normales Gespräch**, beide können gleichzeitig sprechen.
+  </Column>
+</Columns>
+
+<details>
+  <summary>Übung: Übertragungsmodus bestimmen</summary>
+
+<ItemMatch taskData={[
+  { id: 'tv', text: 'Fernsehsignal', answer: 'Simplex' },
+  { id: 'walkie', text: 'Walkie-Talkie', answer: 'Halbduplex' },
+  { id: 'phone', text: 'VoIP-Telefonat', answer: 'Vollduplex' },
+]} />
+
+</details>
+
+---
+
+## Adressierungsformen: Unicast, Broadcast, Multicast, Anycast
+
+<Columns>
+  <Column className='text--left'>
+    #### Unicast
+    ![](https://upload.wikimedia.org/wikipedia/commons/7/75/Unicast.svg)
+    Es wird an **genau einen Empfänger** gesendet.
+    
+    Beispiel: Facebook-Nachricht an deine Oma.
+  </Column>
+  <Column className='text--left'>
+    #### Broadcast
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/dc/Broadcast.svg)
+    Es wird an **alle Empfänger** gesendet.
+    
+    Beispiel: Radiosender sendet Funkwellen aus.
+  </Column>
+  <Column className='text--left'>
+    #### Multicast
+    ![](https://upload.wikimedia.org/wikipedia/commons/3/30/Multicast.svg)
+    Es wird an eine **bestimmte Gruppe von Empfängern** gesendet.
+    
+    Beispiel: E-Mail an mehrere Empfänger.
+  </Column>
+  <Column className='text--left'>
+    #### Anycast
+    ![](https://upload.wikimedia.org/wikipedia/commons/4/43/Anycast.svg)
+    Es wird an **den nächstgelegenen von mehreren möglichen Empfängern** gesendet.
+    
+    Beispiel: Bestellung bei der Apotheke um die Ecke.
+  </Column>
+</Columns>
+
+<details>
+  <summary>Übung: Adressierungsarten erkennen</summary>
+
+<ItemMatch taskData={[
+  { id: 'email', text: 'Eine E-Mail an eine einzelne Person', answer: 'Unicast' },
+  { id: 'lan', text: 'ARP-Request an alle Geräte im LAN', answer: 'Broadcast' },
+  { id: 'video', text: 'Video-Stream an registrierte Teilnehmer', answer: 'Multicast' },
+  { id: 'dns', text: 'DNS-Abfrage zum nächsten Server', answer: 'Anycast' },
+]} />
+
+</details>
+
+---
+
+## Datenübertragung: Parallel vs. Seriell
+<Columns>
+<Column className='text--left'>
+#### Parallel
+Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
+- Vorteile: hohe Übertragungsrate bei extrem kurzen Distanzen.  
+- Nachteile: Störungen und Signalverluste über mittlere und lange Strecken, Laufzeitunterschiede der einzelnen Leitungen bremsen die Übertragung, was bei hohen Taktraten deutlich wird. 
+Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
+</Column>
+
+<Column className='text--left'>
+#### Seriell
+Daten werden **nacheinander über eine einzige Leitung** übertragen.  
+- Vorteile: zuverlässig über längere Strecken, weniger Leitungen nötig. Mit moderner Technik auch auf relativ kurzen Strecken überlegen.
+- Nachteile: geringere Geschwindigkeit im Vergleich zu Parallel bei extrem kurzen Distanzen und niedrigen Frequenzen.  
+Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
+</Column>
+</Columns>
+
+Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzwischen dominieren fast überall serielle Verfahren (z.B. USB, SATA, PCI Express), weil inzwischen sehr viel höhere Taktraten möglich sind. Nur noch extrem kurze Distanzen (z.B. die Kommunikation zwischen Prozessor und Speicher) sind für die parallele Kommunikation ausgelegt. Doch werden auch hier zunehmend hybride Verfahren eingesetzt.
+
+<details>
+<summary>Übung: Übertragungsart erkennen</summary>
+<ItemMatch taskData={[
+  { id: 'usb', text: 'Daten werden nacheinander über eine Leitung übertragen (z.B. USB)', answer: 'Seriell' },
+  { id: 'ide', text: 'Frühere Festplattenverbindung über mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'pci', text: 'Früherer Bus für interne PC-Komponenten, mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'ethernet', text: 'Moderne Netzwerkkabel übertragen Bits nacheinander', answer: 'Seriell' },
+]} />
+</details>
 
 ---
 ## Teste dein Wissen!
