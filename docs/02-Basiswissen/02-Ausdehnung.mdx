@@ -1,0 +1,112 @@
+---
+title: Übertragungswege und Ausdehnung
+---
+
+# Übertragungswege
+
+Computernetz-Übertragungswege lassen sich in **leitungsgebundene** und **drahtlose** Methoden unterteilen, wobei erstere auf Medien wie Kupfer- oder Glasfaserleitung und letztere auf Funktechnologien setzen. Die Wahl des Übertragungswegs hängt von der benötigten Geschwindigkeit, Reichweite und dem spezifischen Netzwerkdesign ab. 
+
+## Leitungsgebundene Übertragungswege
+
+<Columns>
+  <Column className='text--left'>
+**Kupferkabel:**
+Hierzu gehören Twisted-Pair-Kabel (häufig für Ethernet in lokalen Netzwerken) und Koaxialkabel (z.B. Kabel-TV-Anschluss). Sie sind relativ kostengünstig und einfach zu installieren. 
+  </Column>
+  <Column className='text--left'>
+**Glasfaserkabel (Lichtwellenleiter):**
+Diese nutzen Lichtimpulse zur Datenübertragung und bieten eine sehr hohe Geschwindigkeit und Bandbreite, was sie für High-Speed-Verbindungen und lange Distanzen eignet.
+  </Column>
+  <Column className='text--left'>
+**PowerLAN/Powerline:**
+Diese Technik nutzt die vorhandene elektrische Hausinstallation, um Netzwerkdaten zu übertragen, was eine kabelbasierte Verbindung ohne zusätzliche Verkabelung ermöglicht. 
+  </Column>
+</Columns>
+
+---
+
+## Drahtlose Übertragungswege 
+
+**Funk** ist eine der häufigsten drahtlosen Methoden. Beispiele sind:
+- **WLAN:** Ermöglicht drahtlose lokale Netzwerke (LAN) und wird in vielen Umgebungen wie zu Hause oder im Büro eingesetzt.
+- **Mobilfunknetze:** Bieten Internetzugang über weitreichende Netze, wie sie für Smartphones und mobile Geräte verwendet werden.
+- **Bluetooth:** Dient der kurzreichweitigen drahtlosen Kommunikation.
+- **RFID:** Auf sehr kurzen Strecken, z.B. beim Bezahlvorgang mit NFC. 
+- **Satellitenübertragung:** Daten können auch über Satelliten, oft für abgelegene Gebiete oder spezielle Anwendungen, übertragen werden. 
+
+## Faktoren bei der Auswahl
+Die Wahl des Übertragungswegs hängt von verschiedenen Faktoren ab: 
+
+- **Entfernung:**
+  Glasfaser und Mobilfunk eignen sich für weite Distanzen, während WLAN, Bluetooth und NFC eng begrenzte Reichweiten haben.
+- **Geschwindigkeit:**
+  Glasfaser und fortschrittliche WLAN-Standards bieten die höchsten Geschwindigkeiten.
+- **Zuverlässigkeit:**
+  Kabelgebundene Anbindungen bieten oft eine höhere Stabilität als drahtlose. 
+- **Kosten und Infrastruktur:**
+  Verfügbare Infrastruktur (z.B. vorhandene Verkabelung) kann die Wahl beeinflussen. 
+
+---
+
+## Ausdehnung von Netzen: PAN, LAN, MAN, WAN, GAN
+
+Netze können nach ihrer geografischen Reichweite und Größe klassifiziert werden.
+
+<Columns>
+  <Column className='text--left'>
+    #### PAN (Personal Area Network)
+    Ein **PAN** ist ein persönliches Netzwerk, das sich über eine sehr kleine Reichweite von wenigen Metern erstreckt. Es verbindet persönliche Geräte wie Smartphones, Laptops, kabellose Kopfhörer und Wearables miteinander. Die Technologien, die hier zum Einsatz kommen, sind oft kabellos, wie **Bluetooth**, **NFC** oder auch **USB**.
+    
+    Beispiel: Verbindung deines Smartphones mit deiner Smartwatch oder kabellosen Kopfhörern.
+  </Column>
+  <Column className='text--left'>
+    #### LAN (Local Area Network)
+    Ein **LAN** ist ein lokales Netzwerk, das auf ein begrenztes geografisches Gebiet beschränkt ist, z.B. ein Haus, ein Bürogebäude oder eine Schule. Es dient der Verbindung von Computern und Peripheriegeräten in einem geschlossenen Bereich. LANs nutzen Technologien wie **Ethernet** oder **WLAN** (Wireless Local Area Network). Sie zeichnen sich durch hohe Übertragungsgeschwindigkeiten und eine geringe Latenz aus.
+    
+    Beispiel: Das Heimnetzwerk, über das dein Computer mit dem Router und dem Drucker verbunden ist.
+  </Column>
+  <Column className='text--left'>
+    #### MAN (Metropolitan Area Network)
+    Ein **MAN** ist ein städtisches Netzwerk, das eine größere geografische Fläche abdeckt als ein LAN, aber kleiner als ein WAN ist. Es verbindet mehrere LANs innerhalb einer Stadt oder Region miteinander. MANs werden oft von öffentlichen Einrichtungen oder großen Unternehmen betrieben und nutzen Technologien wie Glasfaserkabel oder Richtfunkstrecken.
+    
+    Beispiel: Das Netzwerk, das alle Universitätsgebäude in einer Stadt miteinander verbindet.
+  </Column>
+</Columns>
+
+---
+
+<Columns>
+  <Column className='text--left'>
+    #### WAN (Wide Area Network)
+    Ein **WAN** ist ein Weitverkehrsnetz, das große geografische Gebiete wie Länder oder Kontinente überspannt. Es verbindet mehrere LANs und MANs miteinander und bildet die Grundlage des Internets. WANs nutzen Technologien wie **Glasfaserverbindungen**, **Satellitenkommunikation** und **Mobilfunknetze**. Internet-Service-Provider (ISP) wie die Telekom, koppeln ihre Kunden an ein WAN. Die Übertragungsraten sind in der Regel geringer und die Latenz höher als bei LANs.
+    
+    Beispiel: Das Netz aller Geldautomaten eines Landes, das deutschlandweite Netz der Telekom oder das Landeshochschulnetz BelWü in Baden-Württemberg.
+  </Column>
+  <Column className='text--left'>
+    #### GAN (Global Area Network)
+    Ein **GAN** ist ein WAN, das große Teile des Planeten abdeckt. Oft verbindet es dazu verschiedene WANs. Das Internet ist ein Beispiel für ein GAN, aber auch sehr große, weltweit tätige Unternehmen betreiben solche Netze.
+    
+    Beispiel: Die Netzwerke von großen multinationalen Konzernen, die Niederlassungen auf der ganzen Welt miteinander verbinden oder das Internet.
+  </Column>
+</Columns>
+
+---
+
+Diese Definitionen haben keine scharfen Grenzen und dienen vorallem der Orientierung. Zum Beispiel wird das Internet sowohl als WAN als auch als GAN bezeichnet.
+
+---
+
+<details>
+  <summary>Übung: Netzwerk-Typ zuordnen</summary>
+
+<ItemMatch taskData={[
+  { id: 'home', text: 'Dein Heimnetzwerk mit Laptop, Smartphone und Drucker.', answer: 'LAN' },
+  { id: 'bluetooth', text: 'Ein Bluetooth-Headset, das mit deinem Handy verbunden ist.', answer: 'PAN' },
+  { id: 'internet', text: 'Das Internet, das Länder und Kontinente verbindet.', answer: 'WAN' },
+  { id: 'uni', text: 'Das Netzwerk, das die verschiedenen Campus-Gebäude der Universität verbindet.', answer: 'MAN' },
+  { id: 'multicorp', text: 'Das Netzwerk eines Konzerns mit Niederlassungen in New York, London und Tokio.', answer: 'GAN' },
+]} />
+
+</details>
+
+---
