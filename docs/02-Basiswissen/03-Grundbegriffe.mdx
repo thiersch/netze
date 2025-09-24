@@ -1,65 +1,45 @@
 ---
-title: Fachbegriffe in der Kommunikation
+title: Datenübertragung und Adressierungsformen
 ---
 
-# Fachbegriffe in der Kommunikation
+# Datenübertragung und Adressierungsformen
 
-In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreiben, **wie Daten übertragen und verteilt werden**. Dieses Kapitel behandelt zentrale Konzepte, darunter Leitungs- und Paketvermittlung, Übertragungsrichtungen, Multiplexing und Adressierungsformen. 
+In der Kommunikationstechnik gibt es eine Reihe von Fachbegriffen, die beschreiben, **wie Daten übertragen und verteilt werden**. Dieses Kapitel behandelt zentrale Konzepte, darunter Übertragunsarten, Übertragungsrichtungen, Multiplexing und Adressierungsformen.
 
 Die Konzepte überschneiden sich teilweise, da sie unterschiedliche Aspekte von Maschinenkommunikation umfassen.
 
 ---
 
-## Leitungsvermittlung und Paketvermittlung
-
+## Datenübertragung: Parallel vs. Seriell
 <Columns>
-  <Column className='text--left'>
-    #### Leitungsvermittlung
-    Bei der Leitungsvermittlung wird für die Dauer einer **Kommunikationssitzung** eine feste **Verbindung** zwischen Sender und Empfänger aufgebaut. 
-    - Vorteile: konstante Bandbreite, geringe Latenz. Bietet **garantierte Qualität**.
-    - Nachteile: ineffizient bei sporadischem Datenverkehr.
+<Column className='text--left'>
+#### Parallel
+Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
+- Vorteile: hohe Übertragungsrate bei extrem kurzen Distanzen.  
+- Nachteile: Störungen und Signalverluste über mittlere und lange Strecken, Laufzeitunterschiede der einzelnen Leitungen bremsen die Übertragung, was bei hohen Taktraten deutlich wird. 
+Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
+</Column>
 
-    Merkhilfe: Wie ein **Telefonat**, bei dem (wie früher) eine physische Leitung reserviert wird. Wenn die Sprechenden einschlafen, bleiben die Ressourcen reserviert.
-  </Column>
-  <Column className='text--left'>
-    #### Paketvermittlung
-    Daten werden in **Pakete** zerlegt und unabhängig voneinander über ein Netzwerk gesendet.
-    - Vorteile: effiziente Ressourcennutzung, robust bei Ausfällen, da alternative Routen genommen werden können.
-    - Nachteile: Pakete können in falscher Reihenfolge ankommen, was zusätzliche Verarbeitung nötig macht. Bietet **keine garantierte Qualität**. Wenn Knotenpunkte stark belastet sind, kommt es zu Stau. Wenn Knotenpunkte überlastet sind, kommt es zu Paketverlust. Jede Einheit muss Anfang, Ende und Zieladresse haben.
-
-    Merkhilfe: Wie **Briefe per Post**, die unabhängig voneinander verschickt werden. Jeder Brief passt in einen klar definierten Umschlag, hat also klaren Anfang und klares Ende und trägt mindestens eine Zieladresse.
-  </Column>
+<Column className='text--left'>
+#### Seriell
+Daten werden **nacheinander über eine einzige Leitung** übertragen.  
+- Vorteile: zuverlässig über längere Strecken, weniger Leitungen nötig. Mit moderner Technik auch auf relativ kurzen Strecken überlegen.
+- Nachteile: geringere Geschwindigkeit im Vergleich zu Parallel bei extrem kurzen Distanzen und niedrigen Frequenzen.  
+Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
+</Column>
 </Columns>
 
-<details>
-  <summary>Übung: Vermittlungsart erkennen</summary>
+Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzwischen dominieren fast überall serielle Verfahren (z.B. USB, SATA, PCI Express), weil inzwischen sehr viel höhere Taktraten möglich sind. Nur noch extrem kurze Distanzen (z.B. die Kommunikation zwischen Prozessor und Speicher) sind für die parallele Kommunikation ausgelegt. Doch werden auch hier zunehmend hybride Verfahren eingesetzt.
 
+<details>
+<summary>Übung: Übertragungsart erkennen</summary>
 <ItemMatch taskData={[
-  { id: 'call', text: 'Ein Telefonat über ein Dosentelefon mit gespannter Schnur.', answer: 'Leitungsvermittlung' },
-  { id: 'email', text: 'E-Mails werden über das Internet versendet.', answer: 'Paketvermittlung' },
-  { id: 'video', text: 'Live-Video über IP wird paketweise übertragen.', answer: 'Paketvermittlung' },
-  { id: 'landline', text: 'Festnetztelefon während des Gesprächs reserviert die Leitung.', answer: 'Leitungsvermittlung' },
+  { id: 'usb', text: 'Daten werden nacheinander über eine Leitung übertragen (z.B. USB)', answer: 'Seriell' },
+  { id: 'ide', text: 'Frühere Festplattenverbindung über mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'pci', text: 'Früherer Bus für interne PC-Komponenten, mehrere Leitungen gleichzeitig', answer: 'Parallel' },
+  { id: 'ethernet', text: 'Moderne Netzwerkkabel übertragen Bits nacheinander', answer: 'Seriell' },
 ]} />
-
 </details>
-
-Leitungsvermittlung hat die größten Vorteile, wenn für die gesamte Dauer der Verbindung auf der ganzen Bandbreite kommuniziert wird. Ineffizient wird Leitungsvermittlung, sobald signifikante Pausen entstehen oder nur ein geringer Teil der Bandbreite genutzt wird. Beispiel: Wir telefonieren drei Stunden lang und sagen nur fünf Wörter.
-
-Paketvermittlung hat die größten Vorteile, wenn mit Pausen kommuniziert wird oder redundante Streckenteile ausfallen. Wenn bei vielen Paketen der Nachrichtenanteil kleiner ist als die Adresse, wird Paketvermittlung ineffizient. Wir sprechen dann von hohem **Overhead**. Beispiel: Wir senden jedes Wort eines Buches einzeln in einem eigenen Brief.
-
-:::danger[Nur Schwitzer klicken hier]
-<details>
-  <summary>Historisches für **Nerd-Talk** und ein **Spoiler**</summary>
-
-Inzwischen hat sich die **Paketvermittlung** auch in der Telefonie **durchgesetzt**. 1999 wurde DSL als erste paketvermittelte Infrastruktur für das Internet eingeführt. Das deutsche Festnetz war noch bis 2015 weitgehend leitungsvermittelt. Beim Telefonieren gab es eine durchgängige physische Leitung zwischen den Teilnehmern. Zwischen 2015 und 2020 wurden die alten Kupferleitungen der örtlichen und überörtlichen Netze durch Glasfaserstrecken ersetzt und ein All-IP-Netz aufgebaut, das **nur noch paketvermittelt** arbeitet. 
-
-Gleichzeitig wird, besonders bei interner Telefonie innerhalb von Unternehmen oder Behörden, zunehmend **Voice-over-IP** (**VoIP**) eingesetzt. VoIP nutzt das **Internetprotokoll** (**IP**), das ebenfalls **paketvermittelt** arbeitet. VoIP nutzt die bestehenden Datennetze und verursacht keine gesonderten Verbindungskosten. Skype, WhatsApp, Signal und Telegram nutzen ebenfalls VoIP für Audioanrufe.
-
-Details zu VoIP lernen wir erst viel später.
-
-</details>
-
-:::
 
 ---
 
@@ -112,8 +92,8 @@ Details zu VoIP lernen wir erst viel später.
   <summary>Übung: Übertragungsmodus bestimmen</summary>
 
 <ItemMatch taskData={[
-  { id: 'tv', text: 'Fernsehsignal', answer: 'Simplex' },
   { id: 'walkie', text: 'Walkie-Talkie', answer: 'Halbduplex' },
+  { id: 'tv', text: 'Fernsehsignal', answer: 'Simplex' },
   { id: 'phone', text: 'VoIP-Telefonat', answer: 'Vollduplex' },
 ]} />
 
@@ -158,117 +138,20 @@ Details zu VoIP lernen wir erst viel später.
   <summary>Übung: Adressierungsarten erkennen</summary>
 
 <ItemMatch taskData={[
-  { id: 'email', text: 'Eine E-Mail an eine einzelne Person', answer: 'Unicast' },
-  { id: 'lan', text: 'ARP-Request an alle Geräte im LAN', answer: 'Broadcast' },
-  { id: 'video', text: 'Video-Stream an registrierte Teilnehmer', answer: 'Multicast' },
   { id: 'dns', text: 'DNS-Abfrage zum nächsten Server', answer: 'Anycast' },
+  { id: 'lan', text: 'ARP-Request an alle Geräte im LAN', answer: 'Broadcast' },
+  { id: 'email', text: 'Eine E-Mail an eine einzelne Person', answer: 'Unicast' },
+  { id: 'video', text: 'Video-Stream an registrierte Teilnehmer', answer: 'Multicast' },
 ]} />
 
 </details>
 
 ---
 
-## Datenübertragung: Parallel vs. Seriell
-<Columns>
-<Column className='text--left'>
-#### Parallel
-Daten werden **gleichzeitig über mehrere Leitungen** übertragen.  
-- Vorteile: hohe Übertragungsrate bei extrem kurzen Distanzen.  
-- Nachteile: Störungen und Signalverluste über mittlere und lange Strecken, Laufzeitunterschiede der einzelnen Leitungen bremsen die Übertragung, was bei hohen Taktraten deutlich wird. 
-Merkhilfe: Wie mehrere **Autospuren gleichzeitig**, auf denen Autos parallel fahren.
-</Column>
-
-<Column className='text--left'>
-#### Seriell
-Daten werden **nacheinander über eine einzige Leitung** übertragen.  
-- Vorteile: zuverlässig über längere Strecken, weniger Leitungen nötig. Mit moderner Technik auch auf relativ kurzen Strecken überlegen.
-- Nachteile: geringere Geschwindigkeit im Vergleich zu Parallel bei extrem kurzen Distanzen und niedrigen Frequenzen.  
-Merkhilfe: Wie **Autos nacheinander auf einer Einbahnstraße**.
-</Column>
-</Columns>
-
-Historisch waren viele Computeranschlüsse parallel (Drucker, Festplatten). Inzwischen dominieren fast überall serielle Verfahren (z.B. USB, SATA, PCI Express), weil inzwischen sehr viel höhere Taktraten möglich sind. Nur noch extrem kurze Distanzen (z.B. die Kommunikation zwischen Prozessor und Speicher) sind für die parallele Kommunikation ausgelegt. Doch werden auch hier zunehmend hybride Verfahren eingesetzt.
-
-<details>
-<summary>Übung: Übertragungsart erkennen</summary>
-<ItemMatch taskData={[
-  { id: 'usb', text: 'Daten werden nacheinander über eine Leitung übertragen (z.B. USB)', answer: 'Seriell' },
-  { id: 'ide', text: 'Frühere Festplattenverbindung über mehrere Leitungen gleichzeitig', answer: 'Parallel' },
-  { id: 'pci', text: 'Früherer Bus für interne PC-Komponenten, mehrere Leitungen gleichzeitig', answer: 'Parallel' },
-  { id: 'ethernet', text: 'Moderne Netzwerkkabel übertragen Bits nacheinander', answer: 'Seriell' },
-]} />
-</details>
-
----
 ## Teste dein Wissen!
 <details>
 <summary>Bereit für das Quiz?</summary>
 <Quiz questions={[
-  {
-    question: "Welche Vermittlungsart reserviert eine physische Verbindung zwischen Sender und Empfänger?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: false },
-      { text: "Leitungsvermittlung", isCorrect: true },
-      { text: "Unicast", isCorrect: false },
-      { text: "Multiplexing", isCorrect: false }
-    ],
-  },
-  {
-    question: "Welche Vermittlungsart bietet eine garantierte Qualität?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: false },
-      { text: "Leitungsvermittlung", isCorrect: true },
-      { text: "Heiratsvermittlung", isCorrect: false },
-      { text: "Polizeinotruf 110", isCorrect: false }
-    ],
-  },
-  {
-    question: "Bei welcher Vermittlungsart ist Stau möglich, aus dem Verzögerung (hohe Latenz) resultiert?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: true },
-      { text: "Leitungsvermittlung", isCorrect: false },
-      { text: "Haustiervermittlung", isCorrect: false },
-      { text: "Fahrgemeinschaftsvermittlung", isCorrect: false }
-    ],
-  },
-    {
-    question: "Welche Technologie hat sich inzwischen auch in Bereichen durchgesetzt, wo früher eine andere dominierte?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: true },
-      { text: "Leitungsvermittlung", isCorrect: false },
-      { text: "Serielle Übertragung", isCorrect: true },
-      { text: "Parallele Übertragung", isCorrect: false }
-    ],
-  },
-  {
-    question: "Bei welcher Vermittlungsart ist Überlastung möglich, aus der Paketverlust resultiert?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: true },
-      { text: "Leitungsvermittlung", isCorrect: false },
-      { text: "Global Unicast", isCorrect: false },
-      { text: "Jobvermittlung", isCorrect: false }
-    ],
-  },
-
-  {
-    question: "Welche Vermittlungsart kann keine garantierte Qualität bieten?",
-    answers: [
-      { text: "Paketvermittlung", isCorrect: true },
-      { text: "Leitungsvermittlung", isCorrect: false },
-      { text: "Unicast", isCorrect: false },
-      { text: "Multiplexing", isCorrect: false }
-    ],
-  },
-
-  {
-    question: "Bob sendet Alice ein Kochrezept. Für jede der 16 Anweisungen schreibt er eine eigene E-Mail.",
-    answers: [
-      { text: "Effiziente Nutzung der Leitungsvermittlung", isCorrect: false },
-      { text: "Ineffiziente Nutzung der Paketvermittlung. Overhead ist zu hoch", isCorrect: true },
-      { text: "Sinnvolle Verwendung von bidirektionaler Kommunikation", isCorrect: false },
-      { text: "Wenig sinnvolle Nutzung der Leitungsvermittlung. Ressourcen werden verschwendet.", isCorrect: false }
-    ],
-  },
   {
     question: "Welcher Übertragunsmodus ist unidirektional?",
     answers: [
