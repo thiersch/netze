@@ -1,0 +1,82 @@
+---
+title: Verbindungsorientiert und Verbindungslos
+---
+
+## Verbindungsorientiert und Verbindungslos
+
+Das wichtigste in Kürze.
+
+<Columns>
+<Column>
+#### Verbindungslose Kommunikation
+Nicht-zuverlässige Übertragung. Pakete werden individuell und unabhängig voneinander gesendet. Sie stehen in keinem bekannten Kontext zueinander, haben keine Reihenfolge und die Übertragung hat keinen Zustand. In der Regel ist die Strecke paketvermittelt.
+
+Vorteile
+- Schnelle Übertragung
+- Geringer Overhead
+- Hohe Robustheit und Flexibilität durch dynamisches Routing
+
+Nachteile
+- Keine Garantie für Vollständigkeit und Reihenfolge
+</Column>
+<Column>
+#### Verbindungsorientierte Kommunikation
+Zuverlässige Übertragung. Sender und Empfänger kennen die Anzahl und Reihenfolge der Pakete. Sie wissen wann die Übertragung beginnt und wann sie abgeschlossen ist. Wenn die Strecke nicht-zuverlässig ist, gibt es Bestätigungsmechanismen und Fehlerkorrektur. Bei paketvermittelten Strecken können zusätzlich auch Mechanismen zur Überlast- und zur Flusskontrolle eingesetzt werden.
+
+Vorteile
+- Garantie über Vollständigkeit und Reihenfolge
+- Kontext der Übertragung ist bekannt
+
+Nachteile
+- Langsamere Übertragung
+- Hoher Overhead
+
+</Column>
+</Columns>
+
+## Verbindung
+Eine Verbindung in der Kommunikation besteht immer aus drei Phasen.
+1. Verbindungsaufbau
+2. Kommunikation
+3. Verbindungsabbau
+
+Wir können uns das am Beispiel eines früheren, leitungsvermittelten Telefongesprächs verdeutlichen:
+
+**1. Aufbau**
+- Alice nimmt den Hörer ab und hört ein langes Tuten. Das bedeutet, dass ihre Leitung frei ist.
+ Alice wählt die Nummer von Bob. Jede Ziffer seiner Nummer verbindet zwei Leitungen. Die physische Verbindung ist aufgebaut.
+- Alice hört lange Töne, was bedeutet dass Bobs Leitung auch frei ist und sein Telefon klingelt.
+- Bob nimmt den Hörer ab und die Sprechverbindung ist aufgebaut.
+
+**2. Kommunikation**
+- Alice erzählt Bob von ihrem fürchterlich langen Schultag.
+- Bob erwidert jeden Aspekt der Erzählung mit "Ich hab ja".
+
+**3. Abbau**
+- Alice legt den Hörer auf.
+- Die Sprechverbindung wird abgebaut, die Leitungen sind wieder frei.
+- Die physische Verbindung wird abgebaut, die physischen Leitungen stehen anderen Verbindungen zur Verfügung.
+
+Bei Telefongesprächen in Deutschland bis spätestens 2020, bestand die Verbindung sowohl physisch als auch logisch.
+
+Ein heutiges Telefongespräch läuft für Alice und Bob an ihren Apparaten sehr ähnlich ab:
+
+Obwohl keine **physische Verbindung** mehr zwischen den Teilnehmern besteht, werden sie von Software **logisch** miteinander **verbunden**. Heutige Telefonnetze sind paketvermittelt, können also keine Qualität mehr garantieren und Pakete können verloren gehen oder in falscher Reihenfolge eintreffen. Es sind zusätzliche Mechanismen nötig, damit mit diesen Schwächen umgegangen werden kann und **zuverlässige Kommunikation** möglich ist. Diese Mechanismen liefert **verbindungsorientierte Kommunikation**.
+
+Ein früheres Telefongespräch war **leitungsvermittelt** und **verbindungsorientiert**.
+
+Ein heutiges Telefongespräch ist **paketvermittelt** und **verbindungsorientiert**.
+
+
+Kommunikation über eine Leitungsvermittlung ist immer automatisch auch verbindungsorientiert, da die Leitung über die gesamte Kommunikationssitzung reserviert bleibt.
+
+## Verbindungsorientierte Kommunikation
+Für die verbindungsorientierte Kommunikation wird eine **logische Verbindung** zwischen den Teilnehmern aufgebaut, betrieben und wieder abgebaut. Spezielle Mechanismen, die solche Verbindungen liefern, werden da benutzt, wo **zuverlässige Kommunikation** trotz nicht-zuverlässiger Paketvermittlung gewünscht ist.
+
+Zum Beispiel um Verbindungen zwischen Teilnehmern im paketvermittelten Telefonnetz zu realisieren oder um Verbindungen im paketvermittelten Internet zu ermöglichen.
+
+Verbindungsorientierte Protokolle, die wir uns noch detailliert ansehen werden, sind TCP und HTTPS.
+
+## Verbindungslose Kommunikation
+
+Bei verindungsloser Kommunikation werden Pakete unabhängig voneinander gesendet und empfangen. Sie werden individuell behandelt und können unterschiedliche Wege nehmen. Die Teilnehmer "erinnern" sich nicht an den Zustand einer Konversation, daher nennen wir die Kommunikation auch zustandslos (stateless). Es gibt keine Garantie, dass Pakete ihr Ziel erreichen oder in der Sendereihenfolge empfangen werden.
