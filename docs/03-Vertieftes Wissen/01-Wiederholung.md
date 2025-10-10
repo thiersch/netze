@@ -1,3 +1,7 @@
+---
+title: Wiederholung
+---
+
 # Wiederholung
 
 Bisher haben wir gelernt, dass die Regelwerke in Computernetzen **Protokolle** heißen und in sogenannte **Layer** (Schichten) eingeteilt werden.
