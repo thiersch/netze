@@ -1,3 +1,7 @@
+---
+title: Internetprotokoll
+---
+
 # Internetprotokoll
 
 Das Internet ist ein **Zusammenschluss von Netzen**, die über den ganzen Planeten verteilt sind. Die zusammengeschalteten Netze nutzen unterschiedliche Verfahren und Übertragunswege.
