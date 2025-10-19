@@ -56,16 +56,13 @@ Die Prozesse auf Layer 5 sind nichts anderes als Programme, die gerade laufen un
   }}}}%%
 
 flowchart TB
-  %% Erst die Knoten in gewünschter Reihenfolge listen:
   L5["Layer 5: Prozesse"]
   L4["Layer 4: TCP oder UDP"]
   L3["Layer 3: Internetprotokoll"]
 
-  %% Dann die Kanten — primäre Kette zuerst:
   L5 -->|benutzt| L4
   L4 -->|benutzt| L3
 
-  %% Rückwärts-Pfeile (zeigen die Gegenrichtung ohne die Reihenfolge zu zerstören):
   L4 -->|dient| L5
   L3 -->|dient| L4
 
@@ -79,7 +76,6 @@ flowchart TB
 
 </Column>
 </Columns>
-
 
 Diese Programme können zum Beispiel Computerspiele oder Teile von Computerspielen sein. Typische Programme auf Layer 5 sind Webbrowser wie Chrome, Firefox oder Edge. Browser implementieren höhere Protokolle wie HTTP. Layer 4 dient also sowohl unterschiedlichen laufenden Programmen direkt als auch L5-Protokollen, wie HTTP oder FTP, die in Programmen implementiert sind.
 

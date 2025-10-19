@@ -36,3 +36,20 @@
   border: 1px solid var(--ifm-danger-border-color);
   border-radius: var(--ifm-alert-border-radius);
 }
+
+/* src/css/custom.css */
+.mermaid-vertical {
+  display: flex;
+  justify-content: right;
+  width: 60%;
+  overflow-x: visible; /* verhindert horizontales Scrollen */
+  overflow-y: visible;
+}
+
+/* optional: sorgt für weiches Skalieren auf kleineren Bildschirmen */
+@media (max-width: 768px) {
+  .mermaid-vertical .mermaid svg {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
